@@ -13,6 +13,16 @@
       </categories>
   </entry>
   <entry>
+    <title>20210331更新日志</title>
+    <url>/2021/03/31/19-33-55/</url>
+    <content><![CDATA[<p>1.添加搜索功能</p>
+<p>2.在“关于”界面内增加了简介</p>
+]]></content>
+      <categories>
+        <category>更新日志</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/03/29/20-24-16/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -29,16 +39,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>20210331更新日志</title>
-    <url>/2021/03/31/19-33-55/</url>
-    <content><![CDATA[<p>1.添加搜索功能</p>
-<p>2.在“关于”界面内增加了简介</p>
-]]></content>
-      <categories>
-        <category>更新日志</category>
-      </categories>
   </entry>
   <entry>
     <title>大数乘积取模详解</title>
@@ -64,7 +64,7 @@
 <p>我自认为已经讲得非常详细啦，为了优化运行速度使用了位运算，不熟悉位运算的小伙伴可以去了解一下哦。</p>
 ]]></content>
       <categories>
-        <category>模版</category>
+        <category>模板</category>
       </categories>
       <tags>
         <tag>取模</tag>
