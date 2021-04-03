@@ -32,6 +32,15 @@
       </categories>
   </entry>
   <entry>
+    <title>20210403更新日志</title>
+    <url>/2021/04/03/23-44-58/</url>
+    <content><![CDATA[<p>1.增加底部字数统计</p>
+]]></content>
+      <categories>
+        <category>更新日志</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/03/29/20-24-16/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
