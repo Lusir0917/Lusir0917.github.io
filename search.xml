@@ -23,18 +23,18 @@
       </categories>
   </entry>
   <entry>
-    <title>20210401更新日志</title>
-    <url>/2021/04/01/21-08-26/</url>
-    <content><![CDATA[<p>1.底部添加点击量（貌似有点小问题？）</p>
+    <title>20210403更新日志</title>
+    <url>/2021/04/03/23-44-58/</url>
+    <content><![CDATA[<p>1.增加底部字数统计</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
       </categories>
   </entry>
   <entry>
-    <title>20210403更新日志</title>
-    <url>/2021/04/03/23-44-58/</url>
-    <content><![CDATA[<p>1.增加底部字数统计</p>
+    <title>20210401更新日志</title>
+    <url>/2021/04/01/21-08-26/</url>
+    <content><![CDATA[<p>1.底部添加点击量（貌似有点小问题？）</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -146,6 +146,31 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>求1到n内所有数因子的和</title>
+    <url>/2021/04/05/20-35-53/</url>
+    <content><![CDATA[<p>求 1 ~ n范围内 各个数因子的和，数论中给出了如下结论 ：</p>
+<p>n * ( 1 / 1 + 1/2 + 1/3 + …… + 1/ n) ; </p>
+<p>原来在1到n中，1可以作为 n/ 1个数的因子 ； </p>
+<p>2 可以作为 n / 2 个数的因子 ； </p>
+<p>3可以作为 n / 3 个数的因子；</p>
+<p>由此得出上面式子</p>
+<p>将每个部分视为n / x</p>
+<p>可知可以降低范围到√n</p>
+<p>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(l=<span class="number">1</span>; l&lt;=t; l++)</span><br><span class="line">            ans += n/l;</span><br><span class="line">    ans = ans*<span class="number">2</span>-t*t;<span class="comment">//其中t * t &lt;= n</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+<p>这里贴出另一种代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">LL l, r;</span><br><span class="line">   LL ans = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>( l = <span class="number">1</span>; l &lt;= n; l = r+<span class="number">1</span>)</span><br><span class="line">   &#123;</span><br><span class="line">       r = n/(n/l);</span><br><span class="line">       ans += n/l *(r - l + <span class="number">1</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
       </tags>
   </entry>
 </search>
