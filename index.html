@@ -191,6 +191,84 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/08/23-10-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://i2.tiimg.com/735335/b4ed7c2e36312b81.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/23-10-06/" class="post-title-link" itemprop="url">ABB(manacher)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-08 23:10:06 / 修改时间：23:17:22" itemprop="dateCreated datePublished" datetime="2021-04-08T23:10:06+08:00">2021-04-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>Fernando was hired by the University of Waterloo to finish a development project the university started some time ago. Outside the campus, the university wanted to build its representative bungalow street for important foreign visitors and collaborators.<br>Currently, the street is built only partially, it begins at the lake shore and continues into the forests, where it currently ends. Fernando’s task is to complete the street at its forest end by building more bungalows there. All existing bungalows stand on one side of the street and the new ones should be built on the same side. The bungalows are of various types and painted in various colors.<br>The whole disposition of the street looks a bit chaotic to Fernando. He is afraid that it will look even more chaotic when he adds new bungalows of his own design. To counterbalance the chaos of all bungalow shapes, he wants to add some order to the arrangement by choosing suitable colors for the new bungalows. When the project is finished, the whole sequence of bungalow colors will be symmetric, that is, the sequence of colors is the same when observed from either end of the street.<br>Among other questions, Fernando wonders what is the minimum number of new bungalows he needs to build and paint appropriately to complete the project while respecting his self-imposed<br>bungalow color constraint.</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line contains one integer N (1 ≤ N ≤ 4 ×105 ), the number of existing bungalows in the street. The next line describes the sequence of colors of the existing bungalows, from the beginning of the street at the lake. The line contains one string composed of N lowercase letters (“a” through “z”), where different letters represent different colors.</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output the minimum number of bungalows which must be added to the forest end of the street and painted appropriately to satisfy Fernando’s color symmetry demand.</p>
+<h4 id="样例输入-Copy"><a href="#样例输入-Copy" class="headerlink" title="样例输入 Copy"></a>样例输入 <a href="javascript:CopyToClipboard($('#sampleinput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">abb</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-Copy"><a href="#样例输出-Copy" class="headerlink" title="样例输出 Copy"></a>样例输出 <a href="javascript:CopyToClipboard($('#sampleoutput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>本题是求最少加几个字符可以使该串变成回文串，那么很显然使用马拉车定理求出可以延伸到末尾的回文串再加上其坐标即可，关于manacher 定理敬请查看我上一篇博文 。 </p>
+<p>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">int</span>  t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> y )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x : y ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e5</span> ;</span><br><span class="line"><span class="keyword">char</span> str[ N + <span class="number">10</span> ] ;</span><br><span class="line"><span class="keyword">char</span> ns[ <span class="number">2</span>*N + <span class="number">10</span>] ;</span><br><span class="line"><span class="keyword">int</span> r[<span class="number">2</span> *N +<span class="number">10</span>] ;</span><br><span class="line"><span class="keyword">int</span> len ;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre_change</span><span class="params">(<span class="keyword">char</span> *a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ns[<span class="number">0</span>] = <span class="string">&#x27;@&#x27;</span> ;</span><br><span class="line">    ns[<span class="number">1</span>] = <span class="string">&#x27;#&#x27;</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; len ; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        ns[<span class="number">2</span>*i + <span class="number">2</span>] = a[i] ;</span><br><span class="line">        ns[<span class="number">2</span>*i + <span class="number">3</span>] = <span class="string">&#x27;#&#x27;</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    ns[<span class="number">2</span>*len + <span class="number">2</span>] = <span class="string">&#x27;$&#x27;</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0x3f3f3f3f</span> ;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id = <span class="number">0</span> ,maxid = <span class="number">0</span> ;</span><br><span class="line">    len = <span class="number">2</span> * len + <span class="number">2</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; len ; i ++)</span><br><span class="line">    &#123;     <span class="keyword">if</span>(maxid &gt; i )</span><br><span class="line">        r[i] = <span class="built_in">min</span>(r [<span class="number">2</span> * id - i] , maxid - i ) ;</span><br><span class="line">        <span class="keyword">else</span> r[i] = <span class="number">1</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(ns[i + r[i]] ==ns [ i - r[i]] )</span><br><span class="line">        r[i] ++ ;</span><br><span class="line">    <span class="keyword">if</span>(r[i] + i &gt; maxid)</span><br><span class="line">    &#123;</span><br><span class="line">        maxid = r[i] + i ;</span><br><span class="line">        id = i ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = len - <span class="number">1</span> ; j &gt;=<span class="number">0</span>  ; j --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(r[j] + j == len )</span><br><span class="line">           ans = <span class="built_in">min</span>(ans,t - r[j] + <span class="number">1</span> ) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans) ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;len) ;</span><br><span class="line">t = len;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,str) ;</span><br><span class="line"><span class="built_in">pre_change</span>(str) ;</span><br><span class="line"><span class="comment">//puts(ns) ;</span></span><br><span class="line"><span class="built_in">manacher</span>() ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/07/20-30-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -936,83 +1014,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/03/30/21-06-17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://i2.tiimg.com/735335/b4ed7c2e36312b81.jpg">
-      <meta itemprop="name" content="Lusir">
-      <meta itemprop="description" content="lusir的官方博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lulu的空间">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/21-06-17/" class="post-title-link" itemprop="url">20210330更新日志</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-30 21:06:17" itemprop="dateCreated datePublished" datetime="2021-03-30T21:06:17+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-31 20:39:44" itemprop="dateModified" datetime="2021-03-31T20:39:44+08:00">2021-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">更新日志</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p> 1.标签和分类页面可以进去了</p>
-<p>2.添加<del>超级卡哇伊的</del>头像</p>
-<p>3.删除掉无用的about（以后可能有用）</p>
-<p>其他博文还在路上</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1084,7 +1085,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1097,7 +1098,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1145,7 +1146,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.8k字</span>
+  <span class="post-count">博客全站共4.4k字</span>
 </div>
 
         

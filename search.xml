@@ -50,6 +50,47 @@
       </categories>
   </entry>
   <entry>
+    <title>ABB(manacher)</title>
+    <url>/2021/04/08/23-10-06/</url>
+    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>Fernando was hired by the University of Waterloo to finish a development project the university started some time ago. Outside the campus, the university wanted to build its representative bungalow street for important foreign visitors and collaborators.<br>Currently, the street is built only partially, it begins at the lake shore and continues into the forests, where it currently ends. Fernando’s task is to complete the street at its forest end by building more bungalows there. All existing bungalows stand on one side of the street and the new ones should be built on the same side. The bungalows are of various types and painted in various colors.<br>The whole disposition of the street looks a bit chaotic to Fernando. He is afraid that it will look even more chaotic when he adds new bungalows of his own design. To counterbalance the chaos of all bungalow shapes, he wants to add some order to the arrangement by choosing suitable colors for the new bungalows. When the project is finished, the whole sequence of bungalow colors will be symmetric, that is, the sequence of colors is the same when observed from either end of the street.<br>Among other questions, Fernando wonders what is the minimum number of new bungalows he needs to build and paint appropriately to complete the project while respecting his self-imposed<br>bungalow color constraint.</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line contains one integer N (1 ≤ N ≤ 4 ×105 ), the number of existing bungalows in the street. The next line describes the sequence of colors of the existing bungalows, from the beginning of the street at the lake. The line contains one string composed of N lowercase letters (“a” through “z”), where different letters represent different colors.</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output the minimum number of bungalows which must be added to the forest end of the street and painted appropriately to satisfy Fernando’s color symmetry demand.</p>
+<h4 id="样例输入-Copy"><a href="#样例输入-Copy" class="headerlink" title="样例输入 Copy"></a>样例输入 <a href="javascript:CopyToClipboard($('#sampleinput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">abb</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-Copy"><a href="#样例输出-Copy" class="headerlink" title="样例输出 Copy"></a>样例输出 <a href="javascript:CopyToClipboard($('#sampleoutput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>本题是求最少加几个字符可以使该串变成回文串，那么很显然使用马拉车定理求出可以延伸到末尾的回文串再加上其坐标即可，关于manacher 定理敬请查看我上一篇博文 。 </p>
+<p>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">int</span>  t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> y )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x : y ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e5</span> ;</span><br><span class="line"><span class="keyword">char</span> str[ N + <span class="number">10</span> ] ;</span><br><span class="line"><span class="keyword">char</span> ns[ <span class="number">2</span>*N + <span class="number">10</span>] ;</span><br><span class="line"><span class="keyword">int</span> r[<span class="number">2</span> *N +<span class="number">10</span>] ;</span><br><span class="line"><span class="keyword">int</span> len ;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre_change</span><span class="params">(<span class="keyword">char</span> *a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ns[<span class="number">0</span>] = <span class="string">&#x27;@&#x27;</span> ;</span><br><span class="line">    ns[<span class="number">1</span>] = <span class="string">&#x27;#&#x27;</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; len ; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        ns[<span class="number">2</span>*i + <span class="number">2</span>] = a[i] ;</span><br><span class="line">        ns[<span class="number">2</span>*i + <span class="number">3</span>] = <span class="string">&#x27;#&#x27;</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    ns[<span class="number">2</span>*len + <span class="number">2</span>] = <span class="string">&#x27;$&#x27;</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0x3f3f3f3f</span> ;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id = <span class="number">0</span> ,maxid = <span class="number">0</span> ;</span><br><span class="line">    len = <span class="number">2</span> * len + <span class="number">2</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; len ; i ++)</span><br><span class="line">    &#123;     <span class="keyword">if</span>(maxid &gt; i )</span><br><span class="line">        r[i] = <span class="built_in">min</span>(r [<span class="number">2</span> * id - i] , maxid - i ) ;</span><br><span class="line">        <span class="keyword">else</span> r[i] = <span class="number">1</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(ns[i + r[i]] ==ns [ i - r[i]] )</span><br><span class="line">        r[i] ++ ;</span><br><span class="line">    <span class="keyword">if</span>(r[i] + i &gt; maxid)</span><br><span class="line">    &#123;</span><br><span class="line">        maxid = r[i] + i ;</span><br><span class="line">        id = i ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = len - <span class="number">1</span> ; j &gt;=<span class="number">0</span>  ; j --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(r[j] + j == len )</span><br><span class="line">           ans = <span class="built_in">min</span>(ans,t - r[j] + <span class="number">1</span> ) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans) ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;len) ;</span><br><span class="line">t = len;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,str) ;</span><br><span class="line"><span class="built_in">pre_change</span>(str) ;</span><br><span class="line"><span class="comment">//puts(ns) ;</span></span><br><span class="line"><span class="built_in">manacher</span>() ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+        <tag>Manacher</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/03/29/20-24-16/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>colorful slimes(DP)</title>
     <url>/2021/04/04/22-56-07/</url>
     <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
@@ -70,24 +111,6 @@
       <tags>
         <tag>动态规划</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/03/29/20-24-16/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>大数乘积取模详解</title>
