@@ -73,24 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/03/29/20-24-16/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>colorful slimes(DP)</title>
     <url>/2021/04/04/22-56-07/</url>
     <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
@@ -110,6 +92,48 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/03/29/20-24-16/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>one of each</title>
+    <url>/2021/04/09/23-26-21/</url>
+    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>You are given a sequence of n integers x = [x1,x2,…,xn] and an integer k . It is guaranteed that 1 ≤ xi ≤ k , and every integer from 1 to k appears in the list x at least once.<br>Find the lexicographically smallest subsequence of x that contains each integer from 1 to k exactly once. </p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input contains two integers n and k ( 1 ≤ k ≤ n ≤ 2 ∙105), where n is the size of the sequence, and the sequence consists only of integers from 1 to k .<br>Each of the next n lines contains a single integer xi( 1 ≤ xi ≤ k ). These are the values of the sequence X in order. It is guaranteed that every value from 1 to k will appear at least once in the sequence X . </p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output a sequence of integers on a single line, separated by spaces. This is the lexicographically smallest subsequence of X that contains every value from 1 to k. </p>
+<h4 id="样例输入-Copy"><a href="#样例输入-Copy" class="headerlink" title="样例输入 Copy"></a>样例输入 <a href="javascript:CopyToClipboard($('#sampleinput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">6 3 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">【样例2】</span><br><span class="line">10 5</span><br><span class="line">5 </span><br><span class="line">4 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">4 </span><br><span class="line">1 </span><br><span class="line">1 </span><br><span class="line">5 </span><br><span class="line">5 </span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-Copy"><a href="#样例输出-Copy" class="headerlink" title="样例输出 Copy"></a>样例输出 <a href="javascript:CopyToClipboard($('#sampleoutput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">2 1 3 </span><br><span class="line">【样例2】</span><br><span class="line">3 2 1 4 5 </span><br></pre></td></tr></table></figure>
+
+<p>本题大意为给定一段只包含1<del>k的一段数字序列，求从包含1</del>k的字典序最小序列 。 </p>
+<p>要保证序列都含有1~k 的数字，若当前数字有且仅有一个并且栈内没有该数字，直接压入栈即可，若当前数字有多个且下一个数字比它小，直接弹出栈顶的元素，压入新元素入栈即可，最后倒序输出略有麻烦。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200000</span>+<span class="number">6</span>] ;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//由于数据不大，用num记录各个数字的数量</span></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//用vis 记录该数字是否在栈内</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n ,  k ;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k) ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">       <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a + i ) ;</span><br><span class="line">       num[a[i]] ++ ;</span><br><span class="line"> &#125;</span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt;cnm ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">    num[a[i]] -- ;</span><br><span class="line">    <span class="keyword">if</span>(!vis[a[i]])&#123;<span class="comment">//当且仅当栈内没有该元素时考虑入栈</span></span><br><span class="line">        vis[a[i]]  = <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>()&amp;&amp;num[cnm.<span class="built_in">top</span>()] &amp;&amp; cnm.<span class="built_in">top</span>() &gt; a[i])&#123;<span class="comment">//弹出比它大又需要放在后面的元素</span></span><br><span class="line">            vis[cnm.<span class="built_in">top</span>()] = <span class="number">0</span> ;</span><br><span class="line">            cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">        &#125;</span><br><span class="line">        cnm.<span class="built_in">push</span>(a[i])  ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans[k+<span class="number">5</span>] ;</span><br><span class="line"><span class="keyword">int</span> p = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>())&#123;<span class="comment">//这里将栈内元素倒序输出</span></span><br><span class="line">ans[p ++ ] = cnm.<span class="built_in">top</span>() ;</span><br><span class="line">cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = p - <span class="number">1</span> ; i &gt;= <span class="number">0</span> ; i --)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,ans[i]) ;</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>) ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>本题给的数据量仅仅允许o（n），所以考虑使用方便的数据结构！</p>
+]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
