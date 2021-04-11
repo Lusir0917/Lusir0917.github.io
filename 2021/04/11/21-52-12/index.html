@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"lusir.art","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1.底部添加点击量（貌似有点小问题？）">
+  <meta name="description" content="题目描述Caesar has been betrayed! He always thought his best friends were the senators of Rome, but it turns out they are trying to kill him. Even his best friend, Marcus Junius Brutus, is in on the plot.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20210401更新日志">
-<meta property="og:url" content="http://lusir.art/2021/04/01/21-08-26/index.html">
+<meta property="og:title" content="Et Tu Brute?">
+<meta property="og:url" content="http://lusir.art/2021/04/11/21-52-12/index.html">
 <meta property="og:site_name" content="lulu的空间">
-<meta property="og:description" content="1.底部添加点击量（貌似有点小问题？）">
+<meta property="og:description" content="题目描述Caesar has been betrayed! He always thought his best friends were the senators of Rome, but it turns out they are trying to kill him. Even his best friend, Marcus Junius Brutus, is in on the plot.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-01T13:08:26.000Z">
-<meta property="article:modified_time" content="2021-04-01T13:09:22.339Z">
+<meta property="article:published_time" content="2021-04-11T13:52:12.000Z">
+<meta property="article:modified_time" content="2021-04-11T15:14:01.772Z">
 <meta property="article:author" content="Lusir">
+<meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://lusir.art/2021/04/01/21-08-26/">
+<link rel="canonical" href="http://lusir.art/2021/04/11/21-52-12/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>20210401更新日志 | lulu的空间</title>
+  <title>Et Tu Brute? | lulu的空间</title>
   
 
 
@@ -194,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/01/21-08-26/">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/11/21-52-12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/88012577.jpg">
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          20210401更新日志
+          Et Tu Brute?
         </h1>
 
         <div class="post-meta">
@@ -218,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-01 21:08:26 / 修改时间：21:09:22" itemprop="dateCreated datePublished" datetime="2021-04-01T21:08:26+08:00">2021-04-01</time>
+              <time title="创建时间：2021-04-11 21:52:12 / 修改时间：23:14:01" itemprop="dateCreated datePublished" datetime="2021-04-11T21:52:12+08:00">2021-04-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -226,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">更新日志</span></a>
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
                 </span>
             </span>
 
@@ -241,7 +242,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>1.底部添加点击量（貌似有点小问题？）</p>
+        <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>Caesar has been betrayed! He always thought his best friends were the senators of Rome, but it turns out they are trying to kill him. Even his best friend, Marcus Junius Brutus, is in on the plot. Luckily, he’s managed to get away, for now. If he can make it out of the senate he’ll be okay, and he can overthrow the senate and take over Rome.<br>Unfortunately, he’s a little rattled, and is not making smart decisions. Every minute, he is randomly choosing which room he enters and hides in for the next minute. In each room there is a p% chance that he will be captured. After m minutes the senators will give up the search and go back to their homes, allowing him to escape. Calculate the chance that he will escape if he chooses rooms at random.</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of the input will be a single integer, n ≤ 1, 000. There will be n test cases that follow.<br>Each test case will start with a line of 2 integers: the number of rooms 5 ≤ r ≤ 50 and the number of minutes Caesar must survive, m ≤ 10. The next r lines will consist of a floating point number p &lt; 1 denoting the probability that Caesar survives for the next minute in this room and 4 integers between 1 and r (inclusive on both ends) denoting which rooms the current room is connected to. Caesar always spends the first minute in room 1.<br>Note: The senate is weird, just because room a leads to room b does not mean Caesar can get back into room a from room b.</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output a single floating point number denoting the probability that Caesar survives. The output should be accurate and truncate to three decimal places.</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">5 3</span><br><span class="line">0.50 2 3 4 5</span><br><span class="line">0.25 1 3 4 5</span><br><span class="line">0.30 1 2 4 5</span><br><span class="line">0.80 1 2 3 5</span><br><span class="line">0.60 1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.113</span><br></pre></td></tr></table></figure>
+
+<p>样例大意是给定有5个房间，按顺序给出，凯撒需要存活3分钟，后面按1到5的顺序分别给出了其存活概率以及该房间通向的四个房间，不可逆向。</p>
+<p>显然这是一道简单的概率题，其向多条路并且有终点的性质，显然容易想到递归，并且递归的终点就是时间到了3分钟 ，再加上其总共会给出四个房间，最后算出来的概率还需要/4</p>
+<p>下面贴出AC代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">double</span> probs[<span class="number">55</span>];</span><br><span class="line"><span class="keyword">int</span> rooms[<span class="number">55</span>][<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m == <span class="number">0</span>)  <span class="keyword">return</span> <span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">return</span> ( <span class="built_in">dfs</span>(m<span class="number">-1</span>, rooms[id][<span class="number">1</span>])</span><br><span class="line">              + <span class="built_in">dfs</span>(m<span class="number">-1</span>, rooms[id][<span class="number">2</span>])</span><br><span class="line">              + <span class="built_in">dfs</span>(m<span class="number">-1</span>, rooms[id][<span class="number">3</span>])</span><br><span class="line">              + <span class="built_in">dfs</span>(m<span class="number">-1</span>, rooms[id][<span class="number">4</span>]) ) / <span class="number">4</span> * probs[id];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n) ;</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="keyword">int</span> r, m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;r,&amp;m) ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>  i = <span class="number">1</span>; i &lt;= r; i++) &#123;</span><br><span class="line">           <span class="built_in">scanf</span>(<span class="string">&quot;%lf%d%d%d%d&quot;</span>,probs + i , rooms[i] + <span class="number">1</span> ,rooms[i] +<span class="number">2</span> , rooms[i] + <span class="number">3</span> ,rooms[i] + <span class="number">4</span> ) ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.3f\n&quot;</span>, <span class="built_in">dfs</span>(m, <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>面对这种多个相同过程并且有相似的终点题目，应该首先联想到递归！</p>
 
     </div>
 
@@ -250,6 +263,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%80%92%E5%BD%92/" rel="tag"># 递归</a>
+          </div>
 
         
 
@@ -257,13 +273,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/31/20-06-38/" rel="prev" title="大数乘积取模详解">
-      <i class="fa fa-chevron-left"></i> 大数乘积取模详解
+    <a href="/2021/04/10/23-53-08/" rel="prev" title="20210410更新日志">
+      <i class="fa fa-chevron-left"></i> 20210410更新日志
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/04/02/21-16-33/" rel="next" title="苹果旅游（DP）">
-      苹果旅游（DP） <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -322,6 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
