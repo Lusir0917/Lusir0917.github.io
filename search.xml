@@ -13,6 +13,15 @@
       </categories>
   </entry>
   <entry>
+    <title>20210401更新日志</title>
+    <url>/2021/04/01/21-08-26/</url>
+    <content><![CDATA[<p>1.底部添加点击量（貌似有点小问题？）</p>
+]]></content>
+      <categories>
+        <category>更新日志</category>
+      </categories>
+  </entry>
+  <entry>
     <title>20210331更新日志</title>
     <url>/2021/03/31/19-33-55/</url>
     <content><![CDATA[<p>1.添加搜索功能</p>
@@ -32,18 +41,18 @@
       </categories>
   </entry>
   <entry>
-    <title>20210401更新日志</title>
-    <url>/2021/04/01/21-08-26/</url>
-    <content><![CDATA[<p>1.底部添加点击量（貌似有点小问题？）</p>
+    <title>20210406更新日志</title>
+    <url>/2021/04/06/23-04-49/</url>
+    <content><![CDATA[<p>1.现在背景有奇怪的动态折线了</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
       </categories>
   </entry>
   <entry>
-    <title>20210406更新日志</title>
-    <url>/2021/04/06/23-04-49/</url>
-    <content><![CDATA[<p>1.现在背景有奇怪的动态折线了</p>
+    <title>20210410更新日志</title>
+    <url>/2021/04/10/23-53-08/</url>
+    <content><![CDATA[<p>1.头像可以转动了，而且变圆了</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -73,9 +82,9 @@
       </tags>
   </entry>
   <entry>
-    <title>20210410更新日志</title>
-    <url>/2021/04/10/23-53-08/</url>
-    <content><![CDATA[<p>1.头像可以转动了，而且变圆了</p>
+    <title>20210413更新日志</title>
+    <url>/2021/04/13/23-37-43/</url>
+    <content><![CDATA[<p>1.社交链接改成github了。</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -106,6 +115,28 @@
       </tags>
   </entry>
   <entry>
+    <title>colorful slimes(DP)</title>
+    <url>/2021/04/04/22-56-07/</url>
+    <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
+<p>Snuke can perform the following two actions:</p>
+<p>Select a color i (1≤i≤N), such that he does not currently have a slime in color i, and catch a slime in color i. This action takes him ai seconds.</p>
+<p>Cast a spell, which changes the color of all the slimes that he currently has. The color of a slime in color i (1≤i≤N−1) will become color i+1, and the color of a slime in color N will become color 1. This action takes him x seconds.</p>
+<p>Find the minimum time that Snuke needs to have slimes in all N colors.</p>
+<p>Constraints<br>2≤N≤2,000<br>ai are integers.<br>1≤ai≤109<br>x is an integer.<br>1≤x≤109<br>输入<br>The input is given from Standard Input in the following format:</p>
+<p>N x<br>a1 a2 … aN<br>输出<br>Find the minimum time that Snuke needs to have slimes in all N colors.<br>样例输入 Copy<br>2 10<br>1 100<br>样例输出 Copy<br>12<br>提示<br>Snuke can act as follows:</p>
+<p>Catch a slime in color 1. This takes 1 second.<br>Cast the spell. The color of the slime changes: 1 → 2. This takes 10 seconds.<br>Catch a slime in color 1. This takes 1 second.<br>本题大意是Snuke 想要获得N种颜色，他有两种操作，一是直接付出对应颜色的代价来获得，二是所有获得的颜色i变成颜色i + 1。<br>所以想要获得颜色i 有两种方法<br>1.直接付出相应代价。<br>2.进行操作二j次使 i-j（已经获得）变成 i 。<br>不妨设进行操作二的次数为j，显然想要以最小的代价获得全部的颜色，只需要最多n-1次操作二即可。<br>于是有 0 &lt;= j &lt;= n - 1 。<br>我们发现进行操作二的次数最终会在总代价上加上 j * x，<br>不妨设dp[ i ] [ j ]表示进行j次操作时获得第i个颜色的最小代价。<br>于是可以通过枚举j来获得操作次数为j时获得每种颜色付出的最小代价，最终加和即可。<br>状态转移方程 dp[ i ] [ j ] = min ( a[ i - j ] , dp [ i ] [ j - 1 ])<br>a[i - j ] 表示在获得第i个颜色时进行了第j次操作（已经做了j - 1 次）并以后移了j次的代价获得，<br>dp[ i ] [ j - 1 ] 表示在获得第i个颜色时（已经进行了j-1次操作），以当前代价直接获得。<br>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span>`</span></span><br><span class="line">`<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>`</span></span><br><span class="line">`<span class="keyword">using</span> <span class="keyword">namespace</span> std;`</span><br><span class="line">`<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll ;`</span><br><span class="line"></span><br><span class="line">`<span class="keyword">int</span> dp[<span class="number">2020</span>][<span class="number">2020</span>];`</span><br><span class="line">`ll mi = <span class="number">0x3f3f3f3f3f3f3f3f</span> ;`</span><br><span class="line">`int main()`</span><br><span class="line">`&#123;`</span><br><span class="line">`ll n , x ,sum;`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;x) ;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;dp[i][<span class="number">0</span>]) ;<span class="comment">//这里进行了空间优化，直接用dp[i][0] 表示a[i]即可 。` </span></span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n - <span class="number">1</span> ; j ++)&#123;`</span><br><span class="line">        `<span class="keyword">int</span> k = i - j ;`</span><br><span class="line">        `<span class="keyword">if</span>(k &lt;=<span class="number">0</span>) k += n  ;<span class="comment">//指向后移j次的代价可能会循环`</span></span><br><span class="line">        `dp[i][j] = <span class="built_in">min</span>(dp[i][j<span class="number">-1</span>],dp[k][<span class="number">0</span>]) ;`</span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= n - <span class="number">1</span>; i ++)&#123;`</span><br><span class="line">        `sum = <span class="number">0</span> ;`</span><br><span class="line">        `<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n ; j ++)`</span><br><span class="line">            `sum += dp[j][i] ;`</span><br><span class="line">            `sum += i * x ;<span class="comment">//最后求得各个状态付出代价总和`</span></span><br><span class="line">            `mi = <span class="built_in">min</span>(mi,sum) ;<span class="comment">//取得其中的最小值`</span></span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,mi) ;`</span><br><span class="line">`<span class="keyword">return</span> <span class="number">0</span> ；` </span><br><span class="line">`&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Marching Legion(BFS)</title>
     <url>/2021/04/12/23-34-49/</url>
     <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>There’s a rebellion in Antioch! Caesar is preparing to dispatch an entire legion of his best troops to quell the rebellion, but before he does, he wants to make certain the legion will make it to Antioch.<br>Along the way, there are mountains, rivers, seas, and mythical monsters, each of which the legion cannot pass through. Given a map a legion must travel through, find out if the legion can reach Antioch from Rome.</p>
@@ -126,6 +157,24 @@
       <tags>
         <tag>BFS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/03/29/20-24-16/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>one of each</title>
@@ -150,46 +199,6 @@
         <tag>数据结构</tag>
         <tag>栈</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>colorful slimes(DP)</title>
-    <url>/2021/04/04/22-56-07/</url>
-    <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
-<p>Snuke can perform the following two actions:</p>
-<p>Select a color i (1≤i≤N), such that he does not currently have a slime in color i, and catch a slime in color i. This action takes him ai seconds.</p>
-<p>Cast a spell, which changes the color of all the slimes that he currently has. The color of a slime in color i (1≤i≤N−1) will become color i+1, and the color of a slime in color N will become color 1. This action takes him x seconds.</p>
-<p>Find the minimum time that Snuke needs to have slimes in all N colors.</p>
-<p>Constraints<br>2≤N≤2,000<br>ai are integers.<br>1≤ai≤109<br>x is an integer.<br>1≤x≤109<br>输入<br>The input is given from Standard Input in the following format:</p>
-<p>N x<br>a1 a2 … aN<br>输出<br>Find the minimum time that Snuke needs to have slimes in all N colors.<br>样例输入 Copy<br>2 10<br>1 100<br>样例输出 Copy<br>12<br>提示<br>Snuke can act as follows:</p>
-<p>Catch a slime in color 1. This takes 1 second.<br>Cast the spell. The color of the slime changes: 1 → 2. This takes 10 seconds.<br>Catch a slime in color 1. This takes 1 second.<br>本题大意是Snuke 想要获得N种颜色，他有两种操作，一是直接付出对应颜色的代价来获得，二是所有获得的颜色i变成颜色i + 1。<br>所以想要获得颜色i 有两种方法<br>1.直接付出相应代价。<br>2.进行操作二j次使 i-j（已经获得）变成 i 。<br>不妨设进行操作二的次数为j，显然想要以最小的代价获得全部的颜色，只需要最多n-1次操作二即可。<br>于是有 0 &lt;= j &lt;= n - 1 。<br>我们发现进行操作二的次数最终会在总代价上加上 j * x，<br>不妨设dp[ i ] [ j ]表示进行j次操作时获得第i个颜色的最小代价。<br>于是可以通过枚举j来获得操作次数为j时获得每种颜色付出的最小代价，最终加和即可。<br>状态转移方程 dp[ i ] [ j ] = min ( a[ i - j ] , dp [ i ] [ j - 1 ])<br>a[i - j ] 表示在获得第i个颜色时进行了第j次操作（已经做了j - 1 次）并以后移了j次的代价获得，<br>dp[ i ] [ j - 1 ] 表示在获得第i个颜色时（已经进行了j-1次操作），以当前代价直接获得。<br>下面贴代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span>`</span></span><br><span class="line">`<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>`</span></span><br><span class="line">`<span class="keyword">using</span> <span class="keyword">namespace</span> std;`</span><br><span class="line">`<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll ;`</span><br><span class="line"></span><br><span class="line">`<span class="keyword">int</span> dp[<span class="number">2020</span>][<span class="number">2020</span>];`</span><br><span class="line">`ll mi = <span class="number">0x3f3f3f3f3f3f3f3f</span> ;`</span><br><span class="line">`int main()`</span><br><span class="line">`&#123;`</span><br><span class="line">`ll n , x ,sum;`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;x) ;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;dp[i][<span class="number">0</span>]) ;<span class="comment">//这里进行了空间优化，直接用dp[i][0] 表示a[i]即可 。` </span></span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n - <span class="number">1</span> ; j ++)&#123;`</span><br><span class="line">        `<span class="keyword">int</span> k = i - j ;`</span><br><span class="line">        `<span class="keyword">if</span>(k &lt;=<span class="number">0</span>) k += n  ;<span class="comment">//指向后移j次的代价可能会循环`</span></span><br><span class="line">        `dp[i][j] = <span class="built_in">min</span>(dp[i][j<span class="number">-1</span>],dp[k][<span class="number">0</span>]) ;`</span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= n - <span class="number">1</span>; i ++)&#123;`</span><br><span class="line">        `sum = <span class="number">0</span> ;`</span><br><span class="line">        `<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n ; j ++)`</span><br><span class="line">            `sum += dp[j][i] ;`</span><br><span class="line">            `sum += i * x ;<span class="comment">//最后求得各个状态付出代价总和`</span></span><br><span class="line">            `mi = <span class="built_in">min</span>(mi,sum) ;<span class="comment">//取得其中的最小值`</span></span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,mi) ;`</span><br><span class="line">`<span class="keyword">return</span> <span class="number">0</span> ；` </span><br><span class="line">`&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>刷题总结</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/03/29/20-24-16/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>大数乘积取模详解</title>
