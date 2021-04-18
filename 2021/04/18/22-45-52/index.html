@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lusir.art","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="【题目描述】N cities named with numbers 1 … N are connected with one-way roads. Each road has two parameters associated with it : the road length and the toll that needs to be paid for the road (expressed i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROAD(DFS)">
+<meta property="og:url" content="http://lusir.art/2021/04/18/22-45-52/index.html">
+<meta property="og:site_name" content="lulu的空间">
+<meta property="og:description" content="【题目描述】N cities named with numbers 1 … N are connected with one-way roads. Each road has two parameters associated with it : the road length and the toll that needs to be paid for the road (expressed i">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-18T14:45:52.000Z">
+<meta property="article:modified_time" content="2021-04-18T14:55:42.881Z">
+<meta property="article:author" content="Lusir">
+<meta property="article:tag" content="回溯法">
+<meta property="article:tag" content="DFS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://lusir.art/2021/04/18/22-45-52/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ROAD(DFS) | lulu的空间</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">lulu的空间</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个还在成长的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/18/22-45-52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/88012577.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROAD(DFS)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-18 22:45:52 / 修改时间：22:55:42" itemprop="dateCreated datePublished" datetime="2021-04-18T22:45:52+08:00">2021-04-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h4><p>N cities named with numbers 1 … N are connected with one-way roads. Each road has two parameters associated with it : the road length and the toll that needs to be paid for the road (expressed in the number of coins).<br>Bob and Alice used to live in the city 1. After noticing that Alice was cheating in the card game they liked to play, Bob broke up with her and decided to move away - to the city N. He wants to get there as quickly as possible, but he is short on cash.<br>We want to help Bob to find the shortest path from the city 1 to the city N that he can afford with the amount of money he has.</p>
+<h4 id="【输入】"><a href="#【输入】" class="headerlink" title="【输入】"></a>【输入】</h4><p>The first line of the input contains the integer K, 0 &lt;= K &lt;= 10000, maximum number of coins that Bob can spend on his way.<br>The second line contains the integer N, 2 &lt;= N &lt;= 100, the total number of cities.<br>The third line contains the integer R, 1 &lt;= R &lt;= 10000, the total number of roads.<br>Each of the following R lines describes one road by specifying integers S, D, L and T separated by single blank characters :<br>S is the source city, 1 &lt;= S &lt;= N<br>D is the destination city, 1 &lt;= D &lt;= N<br>L is the road length, 1 &lt;= L &lt;= 100<br>T is the toll (expressed in the number of coins), 0 &lt;= T &lt;=100<br>Notice that different roads may have the same source and destination cities.</p>
+<h4 id="【输出】"><a href="#【输出】" class="headerlink" title="【输出】"></a>【输出】</h4><p>The first and the only line of the output should contain the total length of the shortest path from the city 1 to the city N whose total toll is less than or equal K coins.<br>If such path does not exist, only number -1 should be written to the output.</p>
+<p>例如:</p>
+<table>
+<thead>
+<tr>
+<th align="left">输入</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>5 6 7 1 2 2 3 2 4 3 3 3 4 2 4 1 3 4 1 4 6 2 1 3 5 2 0 5 4 3 2 </code></td>
+<td align="left"><code>11 </code></td>
+</tr>
+</tbody></table>
+<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>本题给定了目标城市N ，并且给出了各个城市的终点城市，路程，以及花费，我们需要在花费不高于K的情况下找到去到城市N的最短路程 。 </p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题的深度搜索思路不难，回溯时剪枝即可，但是<u>怎么遍历给出的所有路是关键，怎么从一个城市到另一个城市，又能在另一个城市的各条路上进行搜索成为了难点</u>。我们试着对每一条路的父节点进行标记，用一个数组存储该城市父节点的下标就可以实现上述目标，详情见代码。 </p>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> x &lt; y ? x : y ;&#125;</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">110</span>] ;</span><br><span class="line"><span class="keyword">int</span> fis[<span class="number">110</span>] ;</span><br><span class="line"><span class="keyword">int</span> mi = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fuck</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> d ;<span class="comment">//d记录该城市的终点</span></span><br><span class="line">    <span class="keyword">int</span> l ;<span class="comment">//l记录距离</span></span><br><span class="line">    <span class="keyword">int</span> dad ;<span class="comment">//记录当前城市的父节点</span></span><br><span class="line">    <span class="keyword">int</span> cost ;<span class="comment">//cost记录花费</span></span><br><span class="line">&#125;cnm[<span class="number">10010</span>];</span><br><span class="line"><span class="keyword">int</span> k , n, r ;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> q ,<span class="keyword">int</span> p ,<span class="keyword">int</span> k )</span><span class="comment">//q是城市的起点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(q == n )<span class="comment">//到达目标城市，更新花费</span></span><br><span class="line">    mi = <span class="built_in">min</span>(p,mi) ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fis[q]; i != <span class="number">-1</span> ; i = cnm[i].dad)<span class="comment">//i为到达该城市的最后一条路（方式），i=-1表示已经没有更多的路了</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//注意初始化的i是q城市父节点，也就是上个城市，说白了i城市的终点就是q，</span></span><br><span class="line">        <span class="comment">//通过这种方式可以找到到达q的所有路径</span></span><br><span class="line">        <span class="keyword">int</span> d = cnm[i].d ;<span class="comment">//i城市的终点</span></span><br><span class="line">        <span class="keyword">if</span>(!vis[d] &amp;&amp; cnm[i].l +p  &lt;mi &amp;&amp; k - cnm[i].cost &gt;= <span class="number">0</span> )&#123;</span><br><span class="line">            vis[d] = <span class="number">1</span> ;</span><br><span class="line">            <span class="built_in">dfs</span>(d,cnm[i].l+ p ,k - cnm[i].cost) ;</span><br><span class="line">            vis[d] = <span class="number">0</span> ;<span class="comment">//回溯</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;k,&amp;n,&amp;r) ;</span><br><span class="line"><span class="built_in">memset</span>(fis,<span class="number">-1</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(fis)) ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; r ; i ++ )&#123;</span><br><span class="line">    <span class="keyword">int</span>  s, d, l, t ;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;s,&amp;d,&amp;l,&amp;t) ;</span><br><span class="line">    cnm[i].d = d ;<span class="comment">//destination记录当前城市的终点</span></span><br><span class="line">    cnm[i].l = l ;<span class="comment">//len记录距离</span></span><br><span class="line">    cnm[i].cost =  t ;<span class="comment">//花费</span></span><br><span class="line">    cnm[i].dad = fis[s] ;<span class="comment">//记录当前点的父节点的下标</span></span><br><span class="line">    fis[s] = i ;<span class="comment">//更新该点的父节点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>,k) ;</span><br><span class="line"><span class="keyword">if</span>(mi!=<span class="number">0x3f3f3f3f</span>)<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,mi) ;</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>) ;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>总结： 搜索的本质是对图的遍历，借助图的知识，可以很有效的解决一些问题。 </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" rel="tag"># 回溯法</a>
+              <a href="/tags/DFS/" rel="tag"># DFS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/17/23-28-15/" rel="prev" title="post">
+      <i class="fa fa-chevron-left"></i> post
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E3%80%91"><span class="nav-number">1.</span> <span class="nav-text">【题目描述】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90%E8%BE%93%E5%85%A5%E3%80%91"><span class="nav-number">2.</span> <span class="nav-text">【输入】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%90%E8%BE%93%E5%87%BA%E3%80%91"><span class="nav-number">3.</span> <span class="nav-text">【输出】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="nav-number">4.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">5.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AC%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">AC代码</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lusir"
+      src="/images/88012577.jpg">
+  <p class="site-author-name" itemprop="name">Lusir</p>
+  <div class="site-description" itemprop="description">lusir的官方博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Lusir0917" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Lusir0917" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lusir</span>
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共9.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
