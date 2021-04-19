@@ -193,6 +193,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/09/23-26-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/88012577.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/23-26-21/" class="post-title-link" itemprop="url">one of each</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-09 23:26:21 / 修改时间：23:47:42" itemprop="dateCreated datePublished" datetime="2021-04-09T23:26:21+08:00">2021-04-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>You are given a sequence of n integers x = [x1,x2,…,xn] and an integer k . It is guaranteed that 1 ≤ xi ≤ k , and every integer from 1 to k appears in the list x at least once.<br>Find the lexicographically smallest subsequence of x that contains each integer from 1 to k exactly once. </p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input contains two integers n and k ( 1 ≤ k ≤ n ≤ 2 ∙105), where n is the size of the sequence, and the sequence consists only of integers from 1 to k .<br>Each of the next n lines contains a single integer xi( 1 ≤ xi ≤ k ). These are the values of the sequence X in order. It is guaranteed that every value from 1 to k will appear at least once in the sequence X . </p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output a sequence of integers on a single line, separated by spaces. This is the lexicographically smallest subsequence of X that contains every value from 1 to k. </p>
+<h4 id="样例输入-Copy"><a href="#样例输入-Copy" class="headerlink" title="样例输入 Copy"></a>样例输入 <a href="javascript:CopyToClipboard($('#sampleinput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">6 3 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">【样例2】</span><br><span class="line">10 5</span><br><span class="line">5 </span><br><span class="line">4 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">4 </span><br><span class="line">1 </span><br><span class="line">1 </span><br><span class="line">5 </span><br><span class="line">5 </span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-Copy"><a href="#样例输出-Copy" class="headerlink" title="样例输出 Copy"></a>样例输出 <a href="javascript:CopyToClipboard($('#sampleoutput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">2 1 3 </span><br><span class="line">【样例2】</span><br><span class="line">3 2 1 4 5 </span><br></pre></td></tr></table></figure>
+
+<p>本题大意为给定一段只包含1<del>k的一段数字序列，求从包含1</del>k的字典序最小序列 。 </p>
+<p>要保证序列都含有1~k 的数字，若当前数字有且仅有一个并且栈内没有该数字，直接压入栈即可，若当前数字有多个且下一个数字比它小，直接弹出栈顶的元素，压入新元素入栈即可，最后倒序输出略有麻烦。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200000</span>+<span class="number">6</span>] ;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//由于数据不大，用num记录各个数字的数量</span></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//用vis 记录该数字是否在栈内</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n ,  k ;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k) ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">       <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a + i ) ;</span><br><span class="line">       num[a[i]] ++ ;</span><br><span class="line"> &#125;</span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt;cnm ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">    num[a[i]] -- ;</span><br><span class="line">    <span class="keyword">if</span>(!vis[a[i]])&#123;<span class="comment">//当且仅当栈内没有该元素时考虑入栈</span></span><br><span class="line">        vis[a[i]]  = <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>()&amp;&amp;num[cnm.<span class="built_in">top</span>()] &amp;&amp; cnm.<span class="built_in">top</span>() &gt; a[i])&#123;<span class="comment">//弹出比它大又需要放在后面的元素</span></span><br><span class="line">            vis[cnm.<span class="built_in">top</span>()] = <span class="number">0</span> ;</span><br><span class="line">            cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">        &#125;</span><br><span class="line">        cnm.<span class="built_in">push</span>(a[i])  ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans[k+<span class="number">5</span>] ;</span><br><span class="line"><span class="keyword">int</span> p = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>())&#123;<span class="comment">//这里将栈内元素倒序输出</span></span><br><span class="line">ans[p ++ ] = cnm.<span class="built_in">top</span>() ;</span><br><span class="line">cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = p - <span class="number">1</span> ; i &gt;= <span class="number">0</span> ; i --)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,ans[i]) ;</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>) ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>本题给的数据量仅仅允许o（n），所以考虑使用方便的数据结构！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/08/23-10-06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -947,75 +1026,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/03/31/19-33-55/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/88012577.jpg">
-      <meta itemprop="name" content="Lusir">
-      <meta itemprop="description" content="lusir的官方博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lulu的空间">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/31/19-33-55/" class="post-title-link" itemprop="url">20210331更新日志</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-03-31 19:33:55 / 修改时间：19:35:27" itemprop="dateCreated datePublished" datetime="2021-03-31T19:33:55+08:00">2021-03-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">更新日志</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.添加搜索功能</p>
-<p>2.在“关于”界面内增加了简介</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1087,7 +1097,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1148,7 +1158,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.6k字</span>
+  <span class="post-count">博客全站共10.4k字</span>
 </div>
 
         

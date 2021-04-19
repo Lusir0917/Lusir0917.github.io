@@ -68,7 +68,7 @@
       </categories>
   </entry>
   <entry>
-    <title>post</title>
+    <title>20210417更新日志</title>
     <url>/2021/04/17/23-28-15/</url>
     <content><![CDATA[<p>1.文章内的链接样式更改，会变色了，虽然还没有链接</p>
 ]]></content>
@@ -217,6 +217,46 @@
       </categories>
       <tags>
         <tag>回溯法</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STICKS(DFS)</title>
+    <url>/2021/04/19/21-48-26/</url>
+    <content><![CDATA[<h4 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h4><p>George took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how many sticks he had originally and how long they were originally. Please help him and design a program which computes the smallest possible original length of those sticks. All lengths expressed in units are integers greater than zero.</p>
+<h4 id="【输入】"><a href="#【输入】" class="headerlink" title="【输入】"></a>【输入】</h4><p>The input contains blocks of 2 lines. The first line contains the number of sticks parts after cutting, there are at most 64 sticks. The second line contains the lengths of those parts separated by the space. The last line of the file contains zero.</p>
+<h4 id="【输出】"><a href="#【输出】" class="headerlink" title="【输出】"></a>【输出】</h4><p>The output should contains the smallest possible length of original sticks, one per line.</p>
+<p>例如:</p>
+<table>
+<thead>
+<tr>
+<th align="left">输入</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>9 5 2 1 5 2 1 5 2 1 </code></td>
+<td align="left"><code>6 </code></td>
+</tr>
+<tr>
+<td align="left"><code>4 1 2 3 4 0 </code></td>
+<td align="left"><code>5</code></td>
+</tr>
+</tbody></table>
+<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>话说这个人有若干根长度相等的木棍，然后他把木棍全随机打碎了，由于他的记性不好，忘记了打碎前这些木棍的长度，现在给定其打碎后的各个小木棍的长度，求其打碎前各个木棍的最小可能长度 。 </p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题的难点在于搜索的方式与剪枝，根据其木棍被打碎前每根长度都相等，我们需要搜索一个目标长度len，看剩下的碎片能否拼出这个len，能就继续搜索，直到所有的碎片都被用完并且都拼成了长度为len 的木棍。 因此dfs的状态中就需要有目标长度len，还需要的长度， 剩下小木棍的的数量。 现在明确需要的条件：</p>
+<ol>
+<li>len一定大于碎片中最长的，并且小于这些碎片拼起来的总长度sum</li>
+<li>sum % len == 0 ，可以在枚举len时直接判断</li>
+<li>一个碎片若不能与len进行拼接，则与其相等的碎片也不能（这里就需要一个排序了）</li>
+</ol>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n ,sum,ma;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">70</span>] ;</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">64</span> *<span class="number">50</span> + <span class="number">6</span>] ;<span class="comment">//标记a[i]是否使用过</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> len,<span class="keyword">int</span> d ,<span class="keyword">int</span> rest )</span><span class="comment">//d记录还需要拼接的长度，rest记录剩下碎片的数量</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(d == <span class="number">0</span> &amp;&amp; rest == <span class="number">0</span> )<span class="keyword">return</span> len ;<span class="comment">//没有剩下的木棍碎片，并且还需要拼接的长度为0，说明找到了</span></span><br><span class="line">    <span class="keyword">if</span>(d == <span class="number">0</span> )d = len ;<span class="comment">//d=0开始拼一个新的长度为len的木棍</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i] == <span class="number">0</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(d &gt;= a[i])</span><br><span class="line">            &#123;</span><br><span class="line">                vis[i] = <span class="number">1</span> ;<span class="comment">//选择当前碎片进行拼接</span></span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">dfs</span>(len,d - a[i],rest - <span class="number">1</span>)) <span class="keyword">return</span> len ;</span><br><span class="line">                vis[i] = <span class="number">0</span> ;<span class="comment">//回溯</span></span><br><span class="line">                <span class="keyword">if</span>(a[i] == d || len ==  d ) <span class="keyword">break</span> ;<span class="comment">//要拼接的碎片和len一样长，就说明找不到</span></span><br><span class="line">                <span class="keyword">while</span>(a[i] == a[i+<span class="number">1</span>])</span><br><span class="line">                    i ++ ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n) ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ ) &#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a + i ) ;</span><br><span class="line">    sum += a[i] ;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">sort</span>(a , a +n , greater&lt;<span class="keyword">int</span>&gt;())  ;<span class="comment">//从大到小排序</span></span><br><span class="line"><span class="keyword">int</span> ans ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = a[<span class="number">0</span>] ; i &lt;= sum ; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(vis)) ;</span><br><span class="line">    <span class="keyword">if</span>(sum % i == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        ans = <span class="built_in">dfs</span>(i,<span class="number">0</span>,n);</span><br><span class="line">        <span class="keyword">if</span>(ans)<span class="keyword">break</span> ;<span class="comment">//第一个找到的答案就是最小的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans) ;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结：dfs的搜索方式是重点。"><a href="#总结：dfs的搜索方式是重点。" class="headerlink" title="总结：dfs的搜索方式是重点。"></a>总结：dfs的搜索方式是重点。</h4>]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
         <tag>DFS</tag>
       </tags>
   </entry>

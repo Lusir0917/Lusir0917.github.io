@@ -193,6 +193,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/19/21-48-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/88012577.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/19/21-48-26/" class="post-title-link" itemprop="url">STICKS(DFS)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-19 21:48:26 / 修改时间：22:29:33" itemprop="dateCreated datePublished" datetime="2021-04-19T21:48:26+08:00">2021-04-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h4><p>George took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how many sticks he had originally and how long they were originally. Please help him and design a program which computes the smallest possible original length of those sticks. All lengths expressed in units are integers greater than zero.</p>
+<h4 id="【输入】"><a href="#【输入】" class="headerlink" title="【输入】"></a>【输入】</h4><p>The input contains blocks of 2 lines. The first line contains the number of sticks parts after cutting, there are at most 64 sticks. The second line contains the lengths of those parts separated by the space. The last line of the file contains zero.</p>
+<h4 id="【输出】"><a href="#【输出】" class="headerlink" title="【输出】"></a>【输出】</h4><p>The output should contains the smallest possible length of original sticks, one per line.</p>
+<p>例如:</p>
+<table>
+<thead>
+<tr>
+<th align="left">输入</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>9 5 2 1 5 2 1 5 2 1 </code></td>
+<td align="left"><code>6 </code></td>
+</tr>
+<tr>
+<td align="left"><code>4 1 2 3 4 0 </code></td>
+<td align="left"><code>5</code></td>
+</tr>
+</tbody></table>
+<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>话说这个人有若干根长度相等的木棍，然后他把木棍全随机打碎了，由于他的记性不好，忘记了打碎前这些木棍的长度，现在给定其打碎后的各个小木棍的长度，求其打碎前各个木棍的最小可能长度 。 </p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题的难点在于搜索的方式与剪枝，根据其木棍被打碎前每根长度都相等，我们需要搜索一个目标长度len，看剩下的碎片能否拼出这个len，能就继续搜索，直到所有的碎片都被用完并且都拼成了长度为len 的木棍。 因此dfs的状态中就需要有目标长度len，还需要的长度， 剩下小木棍的的数量。 现在明确需要的条件：</p>
+<ol>
+<li>len一定大于碎片中最长的，并且小于这些碎片拼起来的总长度sum</li>
+<li>sum % len == 0 ，可以在枚举len时直接判断</li>
+<li>一个碎片若不能与len进行拼接，则与其相等的碎片也不能（这里就需要一个排序了）</li>
+</ol>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n ,sum,ma;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">70</span>] ;</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">64</span> *<span class="number">50</span> + <span class="number">6</span>] ;<span class="comment">//标记a[i]是否使用过</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> len,<span class="keyword">int</span> d ,<span class="keyword">int</span> rest )</span><span class="comment">//d记录还需要拼接的长度，rest记录剩下碎片的数量</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(d == <span class="number">0</span> &amp;&amp; rest == <span class="number">0</span> )<span class="keyword">return</span> len ;<span class="comment">//没有剩下的木棍碎片，并且还需要拼接的长度为0，说明找到了</span></span><br><span class="line">    <span class="keyword">if</span>(d == <span class="number">0</span> )d = len ;<span class="comment">//d=0开始拼一个新的长度为len的木棍</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i] == <span class="number">0</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(d &gt;= a[i])</span><br><span class="line">            &#123;</span><br><span class="line">                vis[i] = <span class="number">1</span> ;<span class="comment">//选择当前碎片进行拼接</span></span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">dfs</span>(len,d - a[i],rest - <span class="number">1</span>)) <span class="keyword">return</span> len ;</span><br><span class="line">                vis[i] = <span class="number">0</span> ;<span class="comment">//回溯</span></span><br><span class="line">                <span class="keyword">if</span>(a[i] == d || len ==  d ) <span class="keyword">break</span> ;<span class="comment">//要拼接的碎片和len一样长，就说明找不到</span></span><br><span class="line">                <span class="keyword">while</span>(a[i] == a[i+<span class="number">1</span>])</span><br><span class="line">                    i ++ ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n) ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ ) &#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a + i ) ;</span><br><span class="line">    sum += a[i] ;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">sort</span>(a , a +n , greater&lt;<span class="keyword">int</span>&gt;())  ;<span class="comment">//从大到小排序</span></span><br><span class="line"><span class="keyword">int</span> ans ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = a[<span class="number">0</span>] ; i &lt;= sum ; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(vis)) ;</span><br><span class="line">    <span class="keyword">if</span>(sum % i == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        ans = <span class="built_in">dfs</span>(i,<span class="number">0</span>,n);</span><br><span class="line">        <span class="keyword">if</span>(ans)<span class="keyword">break</span> ;<span class="comment">//第一个找到的答案就是最小的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans) ;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结：dfs的搜索方式是重点。"><a href="#总结：dfs的搜索方式是重点。" class="headerlink" title="总结：dfs的搜索方式是重点。"></a>总结：dfs的搜索方式是重点。</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/18/22-45-52/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -295,7 +391,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/17/23-28-15/" class="post-title-link" itemprop="url">post</a>
+            <a href="/2021/04/17/23-28-15/" class="post-title-link" itemprop="url">20210417更新日志</a>
         </h2>
 
         <div class="post-meta">
@@ -304,10 +400,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-04-17 23:28:15 / 修改时间：23:29:40" itemprop="dateCreated datePublished" datetime="2021-04-17T23:28:15+08:00">2021-04-17</time>
+              <time title="创建时间：2021-04-17 23:28:15" itemprop="dateCreated datePublished" datetime="2021-04-17T23:28:15+08:00">2021-04-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-19 21:02:48" itemprop="dateModified" datetime="2021-04-19T21:02:48+08:00">2021-04-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -921,85 +1023,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/09/23-26-21/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/88012577.jpg">
-      <meta itemprop="name" content="Lusir">
-      <meta itemprop="description" content="lusir的官方博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lulu的空间">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/09/23-26-21/" class="post-title-link" itemprop="url">one of each</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-09 23:26:21 / 修改时间：23:47:42" itemprop="dateCreated datePublished" datetime="2021-04-09T23:26:21+08:00">2021-04-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>You are given a sequence of n integers x = [x1,x2,…,xn] and an integer k . It is guaranteed that 1 ≤ xi ≤ k , and every integer from 1 to k appears in the list x at least once.<br>Find the lexicographically smallest subsequence of x that contains each integer from 1 to k exactly once. </p>
-<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input contains two integers n and k ( 1 ≤ k ≤ n ≤ 2 ∙105), where n is the size of the sequence, and the sequence consists only of integers from 1 to k .<br>Each of the next n lines contains a single integer xi( 1 ≤ xi ≤ k ). These are the values of the sequence X in order. It is guaranteed that every value from 1 to k will appear at least once in the sequence X . </p>
-<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output a sequence of integers on a single line, separated by spaces. This is the lexicographically smallest subsequence of X that contains every value from 1 to k. </p>
-<h4 id="样例输入-Copy"><a href="#样例输入-Copy" class="headerlink" title="样例输入 Copy"></a>样例输入 <a href="javascript:CopyToClipboard($('#sampleinput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">6 3 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">1 </span><br><span class="line">3 </span><br><span class="line">【样例2】</span><br><span class="line">10 5</span><br><span class="line">5 </span><br><span class="line">4 </span><br><span class="line">3 </span><br><span class="line">2 </span><br><span class="line">1 </span><br><span class="line">4 </span><br><span class="line">1 </span><br><span class="line">1 </span><br><span class="line">5 </span><br><span class="line">5 </span><br></pre></td></tr></table></figure>
-
-<h4 id="样例输出-Copy"><a href="#样例输出-Copy" class="headerlink" title="样例输出 Copy"></a>样例输出 <a href="javascript:CopyToClipboard($('#sampleoutput').text())">Copy</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【样例1】</span><br><span class="line">2 1 3 </span><br><span class="line">【样例2】</span><br><span class="line">3 2 1 4 5 </span><br></pre></td></tr></table></figure>
-
-<p>本题大意为给定一段只包含1<del>k的一段数字序列，求从包含1</del>k的字典序最小序列 。 </p>
-<p>要保证序列都含有1~k 的数字，若当前数字有且仅有一个并且栈内没有该数字，直接压入栈即可，若当前数字有多个且下一个数字比它小，直接弹出栈顶的元素，压入新元素入栈即可，最后倒序输出略有麻烦。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200000</span>+<span class="number">6</span>] ;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//由于数据不大，用num记录各个数字的数量</span></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">200000</span>+<span class="number">6</span>] ;<span class="comment">//用vis 记录该数字是否在栈内</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n ,  k ;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k) ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">       <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a + i ) ;</span><br><span class="line">       num[a[i]] ++ ;</span><br><span class="line"> &#125;</span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt;cnm ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )&#123;</span><br><span class="line">    num[a[i]] -- ;</span><br><span class="line">    <span class="keyword">if</span>(!vis[a[i]])&#123;<span class="comment">//当且仅当栈内没有该元素时考虑入栈</span></span><br><span class="line">        vis[a[i]]  = <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>()&amp;&amp;num[cnm.<span class="built_in">top</span>()] &amp;&amp; cnm.<span class="built_in">top</span>() &gt; a[i])&#123;<span class="comment">//弹出比它大又需要放在后面的元素</span></span><br><span class="line">            vis[cnm.<span class="built_in">top</span>()] = <span class="number">0</span> ;</span><br><span class="line">            cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">        &#125;</span><br><span class="line">        cnm.<span class="built_in">push</span>(a[i])  ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans[k+<span class="number">5</span>] ;</span><br><span class="line"><span class="keyword">int</span> p = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(!cnm.<span class="built_in">empty</span>())&#123;<span class="comment">//这里将栈内元素倒序输出</span></span><br><span class="line">ans[p ++ ] = cnm.<span class="built_in">top</span>() ;</span><br><span class="line">cnm.<span class="built_in">pop</span>() ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = p - <span class="number">1</span> ; i &gt;= <span class="number">0</span> ; i --)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,ans[i]) ;</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>) ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>本题给的数据量仅仅允许o（n），所以考虑使用方便的数据结构！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1071,7 +1094,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1132,7 +1155,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.6k字</span>
+  <span class="post-count">博客全站共10.4k字</span>
 </div>
 
         
