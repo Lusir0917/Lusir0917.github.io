@@ -193,6 +193,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/20/23-12-44/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/88012577.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/20/23-12-44/" class="post-title-link" itemprop="url">QUEEN COVERAGE</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-20 23:12:44 / 修改时间：23:27:14" itemprop="dateCreated datePublished" datetime="2021-04-20T23:12:44+08:00">2021-04-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>In chess, a queen can move as many spaces as she wants in any of the eight directions: up, down, left, right, up and left, up and right, down and left, and down and right, so long as there are no other pieces in her way. </p>
+<p>The Problem<br>Given a large chess board with several queens placed on it, how many squares on the board are either occupied by a queen or can be attacked directly by a queen? (Another way of thinking of the question is: how many squares on the board are already occupied by queens or could have a queen after one move by a queen?) </p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input will contain a single positive integer, n (n ≤ 20), representing the number of input cases to process. The input cases follow. </p>
+<p>The first line of each input case contains two space separated positive integers, s (3 ≤ s ≤ 2000) and q (0 ≤ q ≤ 2000), representing the size of the chess board (both the number of rows and columns) and the number of queens placed on the board, respectively. Then, there will be q lines, each with two space separated integers, xi and yi (1 ≤ xi , yi ≤ s) representing the row and column of the ith queen. </p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>For each case, output a single line with a single integer representing the answer to the input case. </p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">3 1</span><br><span class="line">1 3</span><br><span class="line">4 2</span><br><span class="line">1 3</span><br><span class="line">2 2</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>给定固定大小的棋盘，给定指定数量的皇后的位置，问皇后能吃到的位置加上皇后占的位置一共有多少个 。 </p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题有坑，其数据看似很大，实际上暴力模拟就能过了，不过部分地方处理有借鉴价值 。</p>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> team;</span><br><span class="line"><span class="keyword">int</span> size,n,x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span><span class="params">(<span class="keyword">int</span> size,<span class="keyword">bool</span> line[],<span class="keyword">bool</span> hen[],<span class="keyword">bool</span> zhu[],<span class="keyword">bool</span> ci[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=size; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(line[i]) &#123;</span><br><span class="line">			ans+=size;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=start; j&lt;=size; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(zhu[i-j+size]||ci[i+j<span class="number">-1</span>]||hen[j]) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;team) ;</span><br><span class="line">	<span class="keyword">while</span>(team--) &#123;</span><br><span class="line">		<span class="keyword">bool</span> line[<span class="number">2010</span>]= &#123;<span class="literal">false</span>&#125;,hen[<span class="number">2010</span>] = &#123;<span class="literal">false</span>&#125;,zhu[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;,ci[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;size,&amp;n) ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y) ;</span><br><span class="line">			<span class="keyword">if</span>(!line[x]) </span><br><span class="line">            line[x]=<span class="literal">true</span>;<span class="comment">//标记能被吃的横坐标</span></span><br><span class="line">			<span class="keyword">if</span>(!hen[y]) <span class="comment">//标记能被吃的纵坐标</span></span><br><span class="line">            hen[y]=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span>(!zhu[x-y+size]) <span class="comment">//标记经过该点的主对角线</span></span><br><span class="line">            zhu[x-y+size]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(!ci[x+y<span class="number">-1</span>]) <span class="comment">//标记经过该点的次对角线</span></span><br><span class="line">            ci[x+y<span class="number">-1</span>]=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">work</span>(size,line,hen,zhu,ci)) ;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/19/21-48-26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -955,74 +1035,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/10/23-53-08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/88012577.jpg">
-      <meta itemprop="name" content="Lusir">
-      <meta itemprop="description" content="lusir的官方博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lulu的空间">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/10/23-53-08/" class="post-title-link" itemprop="url">20210410更新日志</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-10 23:53:08 / 修改时间：23:54:00" itemprop="dateCreated datePublished" datetime="2021-04-10T23:53:08+08:00">2021-04-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">更新日志</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.头像可以转动了，而且变圆了</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1094,7 +1106,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1107,7 +1119,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1155,7 +1167,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.4k字</span>
+  <span class="post-count">博客全站共10.9k字</span>
 </div>
 
         
