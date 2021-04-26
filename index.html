@@ -193,6 +193,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/26/21-44-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/88012577.jpg">
+      <meta itemprop="name" content="Lusir">
+      <meta itemprop="description" content="lusir的官方博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lulu的空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/26/21-44-06/" class="post-title-link" itemprop="url">Unraveling Monty Hall(思维)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-26 21:44:06 / 修改时间：22:02:07" itemprop="dateCreated datePublished" datetime="2021-04-26T21:44:06+08:00">2021-04-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">刷题总结</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>On the stage of an auditorium program there are three closed doors: door 1, door 2 and door 3. Behind one of these doors there is a car and behind the other two doors there is a goat. The production of the program randomly chooses the door where the car is without cheating. Only the host of the program knows where the car is. He asks the player to choose one of the doors. We can see that, because there is only one car, and at at least one of the two doors that the player did not choose, there has to be a goat!</p>
+<p>Therefore, the presenter can always do the following: between the two doors that the Player did not choose, he opens one that has a goat, so that the player and the spectators can see the goat. The presenter now asks: “Do you want to change your door to the other door that is still closed?”. Is it a beneficial change or not? The player wants to stay with the door that has the car, of course!</p>
+<p>Paulinho saw a rigorous demonstration that the odds of the car being behind door the player chose initially is 13 and the odds of the car being behind the other door which is still closed and the player did not choose initially is 23 and therefore the exchange is advantageous. Paulinho doesn’t conform, his intuition tells him that either way, the probability is 12 for both doors still closed.</p>
+<p>To bring this matter to an end, let’s simulate this game thousands of times and count how many times the player won the car. We will assume that:<br>·The player picks door 1 initially;<br>·The player always changes doors after the presenter reveals a goat by opening one of the two doors that were not initially selected.<br>In these conditions, in a game, given the number of the door that contains the car, we can know exactly whether the player will win the car or not.</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of the input contains an integer N (1≤N≤104), indicating the number of games in the simulation. Each of the N following rows contains an integer: 1, 2 or 3; representing the door number containing the car in that game.</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Your program must produce a single line containing an integer representing the number of times the player won the car in this simulation, assuming that he always chooses the door 1 and always switch doors after the host reveals a goat by opening one of the two doors that were not initially selected.</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h4 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h4><p>该问题就是典型的三门问题，大意是有三扇门，1,2,3，分别有两头羊和一辆汽车藏于门后，刚开始你可以指定要打开一扇门，但这个时候主持人会将另外两扇门中一扇有羊的门打开，并且询问你要不要换另一个门打开。正解应该是要换。原因很简单，当主持人展示了一扇有羊的门时，此时能否打开有汽车的那扇门取决于换与不换，若不换，当前门后有汽车的概率是1/3（因为另外两门至少有一只羊，所以展示其中的一个不会影响当前门后是否有汽车），因此不换获得汽车的概率就是1/3，由事件的对立性可知，更换获得汽车的概率即为2/3，而不是1/2。</p>
+<p>本题中给出了汽车的位置（1,2,3）门，然后主人公总会选择第1扇门并且在主持人询问是否要更换时一定会更换。</p>
+<p>询问主人公能赢得多少次汽车</p>
+<p>结合上述可知若汽车就在1门后，更换后一定不能得到汽车，反之一定能得到汽车，换言之本题就是统计2,3的数量</p>
+<p>于是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(temp !=<span class="number">1</span>)ans ++ ;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/22/21-59-08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -956,74 +1040,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lusir.art/2021/04/13/23-37-43/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/88012577.jpg">
-      <meta itemprop="name" content="Lusir">
-      <meta itemprop="description" content="lusir的官方博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lulu的空间">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/23-37-43/" class="post-title-link" itemprop="url">20210413更新日志</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-13 23:37:43 / 修改时间：23:38:49" itemprop="dateCreated datePublished" datetime="2021-04-13T23:37:43+08:00">2021-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">更新日志</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.社交链接改成github了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1096,7 +1112,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1109,7 +1125,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1157,7 +1173,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.6k字</span>
+  <span class="post-count">博客全站共12.4k字</span>
 </div>
 
         
