@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>20210330更新日志</title>
-    <url>/2021/03/30/21-06-17/</url>
-    <content><![CDATA[<p> 1.标签和分类页面可以进去了</p>
-<p>2.添加<del>超级卡哇伊的</del>头像</p>
-<p>3.删除掉无用的about（以后可能有用）</p>
-<p>其他博文还在路上</p>
+    <title>20210331更新日志</title>
+    <url>/2021/03/31/19-33-55/</url>
+    <content><![CDATA[<p>1.添加搜索功能</p>
+<p>2.在“关于”界面内增加了简介</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
       </categories>
   </entry>
   <entry>
-    <title>20210331更新日志</title>
-    <url>/2021/03/31/19-33-55/</url>
-    <content><![CDATA[<p>1.添加搜索功能</p>
-<p>2.在“关于”界面内增加了简介</p>
+    <title>20210330更新日志</title>
+    <url>/2021/03/30/21-06-17/</url>
+    <content><![CDATA[<p> 1.标签和分类页面可以进去了</p>
+<p>2.添加<del>超级卡哇伊的</del>头像</p>
+<p>3.删除掉无用的about（以后可能有用）</p>
+<p>其他博文还在路上</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -41,18 +41,18 @@
       </categories>
   </entry>
   <entry>
-    <title>20210410更新日志</title>
-    <url>/2021/04/10/23-53-08/</url>
-    <content><![CDATA[<p>1.头像可以转动了，而且变圆了</p>
+    <title>20210406更新日志</title>
+    <url>/2021/04/06/23-04-49/</url>
+    <content><![CDATA[<p>1.现在背景有奇怪的动态折线了</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
       </categories>
   </entry>
   <entry>
-    <title>20210406更新日志</title>
-    <url>/2021/04/06/23-04-49/</url>
-    <content><![CDATA[<p>1.现在背景有奇怪的动态折线了</p>
+    <title>20210410更新日志</title>
+    <url>/2021/04/10/23-53-08/</url>
+    <content><![CDATA[<p>1.头像可以转动了，而且变圆了</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -68,6 +68,15 @@
       </categories>
   </entry>
   <entry>
+    <title>20210417更新日志</title>
+    <url>/2021/04/17/23-28-15/</url>
+    <content><![CDATA[<p>1.文章内的链接样式更改，会变色了，虽然还没有链接</p>
+]]></content>
+      <categories>
+        <category>更新日志</category>
+      </categories>
+  </entry>
+  <entry>
     <title>20210422更新日志</title>
     <url>/2021/04/22/21-59-08/</url>
     <content><![CDATA[<p>1.增加了音乐播放器，目前只有一首，后续会调整为歌单。</p>
@@ -77,9 +86,9 @@
       </categories>
   </entry>
   <entry>
-    <title>20210417更新日志</title>
-    <url>/2021/04/17/23-28-15/</url>
-    <content><![CDATA[<p>1.文章内的链接样式更改，会变色了，虽然还没有链接</p>
+    <title>20210427更新日志</title>
+    <url>/2021/04/27/22-09-51/</url>
+    <content><![CDATA[<p>1.现在音乐换成我的歌单了，但是由于宽度限制导致按钮重叠，不过还是能点到的，后续会解决</p>
 ]]></content>
       <categories>
         <category>更新日志</category>
@@ -151,52 +160,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Marching Legion(BFS)</title>
-    <url>/2021/04/12/23-34-49/</url>
-    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>There’s a rebellion in Antioch! Caesar is preparing to dispatch an entire legion of his best troops to quell the rebellion, but before he does, he wants to make certain the legion will make it to Antioch.<br>Along the way, there are mountains, rivers, seas, and mythical monsters, each of which the legion cannot pass through. Given a map a legion must travel through, find out if the legion can reach Antioch from Rome.</p>
-<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of the input will be a single integer, n ≤ 1, 000. There will be n test cases that follow.<br>Input will begin with two integers, 0 &lt; h, w &lt; 100, indicating the height and width of the map, respectively. h lines with w characters each will follow. An “X” on the map represents an impassable obstacle while an “O” represents traversable terrain. Note that legions, moving in square formations, can only move up, down, left, and right; legions can never travel diagonally. “R” represents Rome, the starting point of the legion, and “A” represents Antioch, the destination point for the legion</p>
-<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output “March onward!” if the legion can reach Antioch from Rome, “Stay home!” otherwise. Each output should be line separated.</p>
-<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">6 6</span><br><span class="line">XXXXOA</span><br><span class="line">XOXXOX</span><br><span class="line">XOXXOX</span><br><span class="line">XOOOOX</span><br><span class="line">XOXXXX</span><br><span class="line">XROOOX</span><br><span class="line">4 4</span><br><span class="line">XXOA</span><br><span class="line">XOOX</span><br><span class="line">XOXX</span><br><span class="line">XRXO</span><br><span class="line">2 2</span><br><span class="line">XA</span><br><span class="line">RX</span><br></pre></td></tr></table></figure>
-
-<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">March onward!</span><br><span class="line">March onward!</span><br><span class="line">Stay home!</span><br></pre></td></tr></table></figure>
-
-<p>题目大意为给定起始点A终点R，其中X不能通，O可通过，问能否到达终点，寻路问题上能用BFS就不用DFS，这是一道简单的BFS题目。详情请看代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std ;</span><br><span class="line"><span class="keyword">int</span> t ;<span class="comment">//记录数据的数量</span></span><br><span class="line"><span class="keyword">int</span> R,C ;<span class="comment">//分别为区域的长宽</span></span><br><span class="line"><span class="keyword">char</span> pos[<span class="number">110</span>][<span class="number">110</span>] ;<span class="comment">//存储目标位置</span></span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">5</span>][<span class="number">5</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;&#125; ;<span class="comment">//使用位移数组，减少码量</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span><span class="comment">//结构体记录位置</span></span><br><span class="line">    <span class="keyword">int</span> x  ;</span><br><span class="line">    <span class="keyword">int</span> y ;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> start_x,start_y, end_x,end_y ;</span><br><span class="line">queue&lt;node&gt;q ;<span class="comment">//使用队列存储起点</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;<span class="comment">//判断此路是否可通</span></span><br><span class="line">    <span class="keyword">if</span>(x &gt;=<span class="number">1</span> &amp;&amp; x &lt;= R&amp;&amp;y &gt;= <span class="number">1</span> &amp;&amp; y &lt;=C&amp;&amp;(pos[x][y] == <span class="string">&#x27;O&#x27;</span>||pos[x][y] ==<span class="string">&#x27;R&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())q.<span class="built_in">pop</span>() ;<span class="comment">//清空队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(&#123;start_x,start_y&#125;) ;<span class="comment">//起点入队</span></span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())&#123;</span><br><span class="line">        <span class="keyword">int</span> X = q.<span class="built_in">front</span>().x ;<span class="comment">//开始从队首的一个路口走起</span></span><br><span class="line">        <span class="keyword">int</span> Y = q.<span class="built_in">front</span>().y ;</span><br><span class="line">        q.<span class="built_in">pop</span>() ;<span class="comment">//不回头哈哈哈</span></span><br><span class="line">        <span class="keyword">if</span>(X == end_x &amp;&amp; Y == end_y) <span class="keyword">return</span> <span class="number">1</span> ;<span class="comment">//到终点就返回1</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">4</span> ; i ++ )&#123;</span><br><span class="line">            <span class="keyword">int</span> next_x,next_y ;</span><br><span class="line">            next_x = X + mov[i][<span class="number">0</span>] ;</span><br><span class="line">            next_y = Y + mov[i][<span class="number">1</span>] ;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">judge</span>(next_x,next_y))&#123;<span class="comment">//判断四个方向能否走</span></span><br><span class="line">                pos[next_x][next_y] = <span class="string">&#x27;X&#x27;</span> ;<span class="comment">//不再回头，直升起点</span></span><br><span class="line">                q.<span class="built_in">push</span>(&#123;next_x,next_y&#125;) ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t) ;</span><br><span class="line">    <span class="keyword">while</span>(t -- )&#123;</span><br><span class="line">        start_x = <span class="number">0</span> ;</span><br><span class="line">        start_y = <span class="number">0</span> ;</span><br><span class="line">        end_y = <span class="number">0</span> ;</span><br><span class="line">        end_x = <span class="number">0</span> ;</span><br><span class="line">        cin&gt;&gt; R &gt;&gt; C ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= R ; i ++ )</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= C ; j ++ )&#123;</span><br><span class="line">                cin &gt;&gt; pos[i][j] ;</span><br><span class="line">                <span class="keyword">if</span>(pos[i][j] == <span class="string">&#x27;A&#x27;</span>)&#123;<span class="comment">//找到起始位置</span></span><br><span class="line">                    start_x =  i ;</span><br><span class="line">                    start_y = j   ;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(pos[i][j] == <span class="string">&#x27;R&#x27;</span>)&#123;</span><br><span class="line">                    end_x = i ;</span><br><span class="line">                    end_y = j ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">bfs</span>()) <span class="built_in">puts</span>(<span class="string">&quot;March onward!&quot;</span>) ;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;Stay home!&quot;</span>) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>对比DFS会走到很多的死路并且回溯会导致时间效率过低，而BFS会对所有岔路进行检索，并且不会回头，所以解决这类问题BFS优先于DFS 。</p>
-]]></content>
-      <categories>
-        <category>搜索</category>
-      </categories>
-      <tags>
-        <tag>BFS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QUEEN COVERAGE</title>
-    <url>/2021/04/20/23-12-44/</url>
-    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>In chess, a queen can move as many spaces as she wants in any of the eight directions: up, down, left, right, up and left, up and right, down and left, and down and right, so long as there are no other pieces in her way. </p>
-<p>The Problem<br>Given a large chess board with several queens placed on it, how many squares on the board are either occupied by a queen or can be attacked directly by a queen? (Another way of thinking of the question is: how many squares on the board are already occupied by queens or could have a queen after one move by a queen?) </p>
-<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input will contain a single positive integer, n (n ≤ 20), representing the number of input cases to process. The input cases follow. </p>
-<p>The first line of each input case contains two space separated positive integers, s (3 ≤ s ≤ 2000) and q (0 ≤ q ≤ 2000), representing the size of the chess board (both the number of rows and columns) and the number of queens placed on the board, respectively. Then, there will be q lines, each with two space separated integers, xi and yi (1 ≤ xi , yi ≤ s) representing the row and column of the ith queen. </p>
-<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>For each case, output a single line with a single integer representing the answer to the input case. </p>
-<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">3 1</span><br><span class="line">1 3</span><br><span class="line">4 2</span><br><span class="line">1 3</span><br><span class="line">2 2</span><br></pre></td></tr></table></figure>
-
-<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">7</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
-
-<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>给定固定大小的棋盘，给定指定数量的皇后的位置，问皇后能吃到的位置加上皇后占的位置一共有多少个 。 </p>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题有坑，其数据看似很大，实际上暴力模拟就能过了，不过部分地方处理有借鉴价值 。</p>
-<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> team;</span><br><span class="line"><span class="keyword">int</span> size,n,x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span><span class="params">(<span class="keyword">int</span> size,<span class="keyword">bool</span> line[],<span class="keyword">bool</span> hen[],<span class="keyword">bool</span> zhu[],<span class="keyword">bool</span> ci[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=size; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(line[i]) &#123;</span><br><span class="line">			ans+=size;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=start; j&lt;=size; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(zhu[i-j+size]||ci[i+j<span class="number">-1</span>]||hen[j]) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;team) ;</span><br><span class="line">	<span class="keyword">while</span>(team--) &#123;</span><br><span class="line">		<span class="keyword">bool</span> line[<span class="number">2010</span>]= &#123;<span class="literal">false</span>&#125;,hen[<span class="number">2010</span>] = &#123;<span class="literal">false</span>&#125;,zhu[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;,ci[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;size,&amp;n) ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y) ;</span><br><span class="line">			<span class="keyword">if</span>(!line[x]) </span><br><span class="line">            line[x]=<span class="literal">true</span>;<span class="comment">//标记能被吃的横坐标</span></span><br><span class="line">			<span class="keyword">if</span>(!hen[y]) <span class="comment">//标记能被吃的纵坐标</span></span><br><span class="line">            hen[y]=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span>(!zhu[x-y+size]) <span class="comment">//标记经过该点的主对角线</span></span><br><span class="line">            zhu[x-y+size]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(!ci[x+y<span class="number">-1</span>]) <span class="comment">//标记经过该点的次对角线</span></span><br><span class="line">            ci[x+y<span class="number">-1</span>]=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">work</span>(size,line,hen,zhu,ci)) ;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>刷题总结</category>
-      </categories>
-      <tags>
-        <tag>模拟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Et Tu Brute?</title>
     <url>/2021/04/11/21-52-12/</url>
     <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>Caesar has been betrayed! He always thought his best friends were the senators of Rome, but it turns out they are trying to kill him. Even his best friend, Marcus Junius Brutus, is in on the plot. Luckily, he’s managed to get away, for now. If he can make it out of the senate he’ll be okay, and he can overthrow the senate and take over Rome.<br>Unfortunately, he’s a little rattled, and is not making smart decisions. Every minute, he is randomly choosing which room he enters and hides in for the next minute. In each room there is a p% chance that he will be captured. After m minutes the senators will give up the search and go back to their homes, allowing him to escape. Calculate the chance that he will escape if he chooses rooms at random.</p>
@@ -218,6 +181,28 @@
       </categories>
       <tags>
         <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Marching Legion(BFS)</title>
+    <url>/2021/04/12/23-34-49/</url>
+    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>There’s a rebellion in Antioch! Caesar is preparing to dispatch an entire legion of his best troops to quell the rebellion, but before he does, he wants to make certain the legion will make it to Antioch.<br>Along the way, there are mountains, rivers, seas, and mythical monsters, each of which the legion cannot pass through. Given a map a legion must travel through, find out if the legion can reach Antioch from Rome.</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of the input will be a single integer, n ≤ 1, 000. There will be n test cases that follow.<br>Input will begin with two integers, 0 &lt; h, w &lt; 100, indicating the height and width of the map, respectively. h lines with w characters each will follow. An “X” on the map represents an impassable obstacle while an “O” represents traversable terrain. Note that legions, moving in square formations, can only move up, down, left, and right; legions can never travel diagonally. “R” represents Rome, the starting point of the legion, and “A” represents Antioch, the destination point for the legion</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>Output “March onward!” if the legion can reach Antioch from Rome, “Stay home!” otherwise. Each output should be line separated.</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">6 6</span><br><span class="line">XXXXOA</span><br><span class="line">XOXXOX</span><br><span class="line">XOXXOX</span><br><span class="line">XOOOOX</span><br><span class="line">XOXXXX</span><br><span class="line">XROOOX</span><br><span class="line">4 4</span><br><span class="line">XXOA</span><br><span class="line">XOOX</span><br><span class="line">XOXX</span><br><span class="line">XRXO</span><br><span class="line">2 2</span><br><span class="line">XA</span><br><span class="line">RX</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">March onward!</span><br><span class="line">March onward!</span><br><span class="line">Stay home!</span><br></pre></td></tr></table></figure>
+
+<p>题目大意为给定起始点A终点R，其中X不能通，O可通过，问能否到达终点，寻路问题上能用BFS就不用DFS，这是一道简单的BFS题目。详情请看代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std ;</span><br><span class="line"><span class="keyword">int</span> t ;<span class="comment">//记录数据的数量</span></span><br><span class="line"><span class="keyword">int</span> R,C ;<span class="comment">//分别为区域的长宽</span></span><br><span class="line"><span class="keyword">char</span> pos[<span class="number">110</span>][<span class="number">110</span>] ;<span class="comment">//存储目标位置</span></span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">5</span>][<span class="number">5</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;&#125; ;<span class="comment">//使用位移数组，减少码量</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span><span class="comment">//结构体记录位置</span></span><br><span class="line">    <span class="keyword">int</span> x  ;</span><br><span class="line">    <span class="keyword">int</span> y ;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> start_x,start_y, end_x,end_y ;</span><br><span class="line">queue&lt;node&gt;q ;<span class="comment">//使用队列存储起点</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;<span class="comment">//判断此路是否可通</span></span><br><span class="line">    <span class="keyword">if</span>(x &gt;=<span class="number">1</span> &amp;&amp; x &lt;= R&amp;&amp;y &gt;= <span class="number">1</span> &amp;&amp; y &lt;=C&amp;&amp;(pos[x][y] == <span class="string">&#x27;O&#x27;</span>||pos[x][y] ==<span class="string">&#x27;R&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())q.<span class="built_in">pop</span>() ;<span class="comment">//清空队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(&#123;start_x,start_y&#125;) ;<span class="comment">//起点入队</span></span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())&#123;</span><br><span class="line">        <span class="keyword">int</span> X = q.<span class="built_in">front</span>().x ;<span class="comment">//开始从队首的一个路口走起</span></span><br><span class="line">        <span class="keyword">int</span> Y = q.<span class="built_in">front</span>().y ;</span><br><span class="line">        q.<span class="built_in">pop</span>() ;<span class="comment">//不回头哈哈哈</span></span><br><span class="line">        <span class="keyword">if</span>(X == end_x &amp;&amp; Y == end_y) <span class="keyword">return</span> <span class="number">1</span> ;<span class="comment">//到终点就返回1</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">4</span> ; i ++ )&#123;</span><br><span class="line">            <span class="keyword">int</span> next_x,next_y ;</span><br><span class="line">            next_x = X + mov[i][<span class="number">0</span>] ;</span><br><span class="line">            next_y = Y + mov[i][<span class="number">1</span>] ;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">judge</span>(next_x,next_y))&#123;<span class="comment">//判断四个方向能否走</span></span><br><span class="line">                pos[next_x][next_y] = <span class="string">&#x27;X&#x27;</span> ;<span class="comment">//不再回头，直升起点</span></span><br><span class="line">                q.<span class="built_in">push</span>(&#123;next_x,next_y&#125;) ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t) ;</span><br><span class="line">    <span class="keyword">while</span>(t -- )&#123;</span><br><span class="line">        start_x = <span class="number">0</span> ;</span><br><span class="line">        start_y = <span class="number">0</span> ;</span><br><span class="line">        end_y = <span class="number">0</span> ;</span><br><span class="line">        end_x = <span class="number">0</span> ;</span><br><span class="line">        cin&gt;&gt; R &gt;&gt; C ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= R ; i ++ )</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= C ; j ++ )&#123;</span><br><span class="line">                cin &gt;&gt; pos[i][j] ;</span><br><span class="line">                <span class="keyword">if</span>(pos[i][j] == <span class="string">&#x27;A&#x27;</span>)&#123;<span class="comment">//找到起始位置</span></span><br><span class="line">                    start_x =  i ;</span><br><span class="line">                    start_y = j   ;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(pos[i][j] == <span class="string">&#x27;R&#x27;</span>)&#123;</span><br><span class="line">                    end_x = i ;</span><br><span class="line">                    end_y = j ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">bfs</span>()) <span class="built_in">puts</span>(<span class="string">&quot;March onward!&quot;</span>) ;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;Stay home!&quot;</span>) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对比DFS会走到很多的死路并且回溯会导致时间效率过低，而BFS会对所有岔路进行检索，并且不会回头，所以解决这类问题BFS优先于DFS 。</p>
+]]></content>
+      <categories>
+        <category>搜索</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -294,6 +279,30 @@
       </tags>
   </entry>
   <entry>
+    <title>QUEEN COVERAGE</title>
+    <url>/2021/04/20/23-12-44/</url>
+    <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>In chess, a queen can move as many spaces as she wants in any of the eight directions: up, down, left, right, up and left, up and right, down and left, and down and right, so long as there are no other pieces in her way. </p>
+<p>The Problem<br>Given a large chess board with several queens placed on it, how many squares on the board are either occupied by a queen or can be attacked directly by a queen? (Another way of thinking of the question is: how many squares on the board are already occupied by queens or could have a queen after one move by a queen?) </p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>The first line of input will contain a single positive integer, n (n ≤ 20), representing the number of input cases to process. The input cases follow. </p>
+<p>The first line of each input case contains two space separated positive integers, s (3 ≤ s ≤ 2000) and q (0 ≤ q ≤ 2000), representing the size of the chess board (both the number of rows and columns) and the number of queens placed on the board, respectively. Then, there will be q lines, each with two space separated integers, xi and yi (1 ≤ xi , yi ≤ s) representing the row and column of the ith queen. </p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>For each case, output a single line with a single integer representing the answer to the input case. </p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">3 1</span><br><span class="line">1 3</span><br><span class="line">4 2</span><br><span class="line">1 3</span><br><span class="line">2 2</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">7</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><p>给定固定大小的棋盘，给定指定数量的皇后的位置，问皇后能吃到的位置加上皇后占的位置一共有多少个 。 </p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题有坑，其数据看似很大，实际上暴力模拟就能过了，不过部分地方处理有借鉴价值 。</p>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> team;</span><br><span class="line"><span class="keyword">int</span> size,n,x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span><span class="params">(<span class="keyword">int</span> size,<span class="keyword">bool</span> line[],<span class="keyword">bool</span> hen[],<span class="keyword">bool</span> zhu[],<span class="keyword">bool</span> ci[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=size; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(line[i]) &#123;</span><br><span class="line">			ans+=size;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=start; j&lt;=size; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(zhu[i-j+size]||ci[i+j<span class="number">-1</span>]||hen[j]) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;team) ;</span><br><span class="line">	<span class="keyword">while</span>(team--) &#123;</span><br><span class="line">		<span class="keyword">bool</span> line[<span class="number">2010</span>]= &#123;<span class="literal">false</span>&#125;,hen[<span class="number">2010</span>] = &#123;<span class="literal">false</span>&#125;,zhu[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;,ci[<span class="number">4000</span>]= &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;size,&amp;n) ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y) ;</span><br><span class="line">			<span class="keyword">if</span>(!line[x]) </span><br><span class="line">            line[x]=<span class="literal">true</span>;<span class="comment">//标记能被吃的横坐标</span></span><br><span class="line">			<span class="keyword">if</span>(!hen[y]) <span class="comment">//标记能被吃的纵坐标</span></span><br><span class="line">            hen[y]=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span>(!zhu[x-y+size]) <span class="comment">//标记经过该点的主对角线</span></span><br><span class="line">            zhu[x-y+size]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(!ci[x+y<span class="number">-1</span>]) <span class="comment">//标记经过该点的次对角线</span></span><br><span class="line">            ci[x+y<span class="number">-1</span>]=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">work</span>(size,line,hen,zhu,ci)) ;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unraveling Monty Hall(思维)</title>
     <url>/2021/04/26/21-44-06/</url>
     <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>On the stage of an auditorium program there are three closed doors: door 1, door 2 and door 3. Behind one of these doors there is a car and behind the other two doors there is a goat. The production of the program randomly chooses the door where the car is without cheating. Only the host of the program knows where the car is. He asks the player to choose one of the doors. We can see that, because there is only one car, and at at least one of the two doors that the player did not choose, there has to be a goat!</p>
@@ -361,6 +370,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/03/29/20-24-16/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>colorful slimes(DP)</title>
+    <url>/2021/04/04/22-56-07/</url>
+    <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
+<p>Snuke can perform the following two actions:</p>
+<p>Select a color i (1≤i≤N), such that he does not currently have a slime in color i, and catch a slime in color i. This action takes him ai seconds.</p>
+<p>Cast a spell, which changes the color of all the slimes that he currently has. The color of a slime in color i (1≤i≤N−1) will become color i+1, and the color of a slime in color N will become color 1. This action takes him x seconds.</p>
+<p>Find the minimum time that Snuke needs to have slimes in all N colors.</p>
+<p>Constraints<br>2≤N≤2,000<br>ai are integers.<br>1≤ai≤109<br>x is an integer.<br>1≤x≤109<br>输入<br>The input is given from Standard Input in the following format:</p>
+<p>N x<br>a1 a2 … aN<br>输出<br>Find the minimum time that Snuke needs to have slimes in all N colors.<br>样例输入 Copy<br>2 10<br>1 100<br>样例输出 Copy<br>12<br>提示<br>Snuke can act as follows:</p>
+<p>Catch a slime in color 1. This takes 1 second.<br>Cast the spell. The color of the slime changes: 1 → 2. This takes 10 seconds.<br>Catch a slime in color 1. This takes 1 second.<br>本题大意是Snuke 想要获得N种颜色，他有两种操作，一是直接付出对应颜色的代价来获得，二是所有获得的颜色i变成颜色i + 1。<br>所以想要获得颜色i 有两种方法<br>1.直接付出相应代价。<br>2.进行操作二j次使 i-j（已经获得）变成 i 。<br>不妨设进行操作二的次数为j，显然想要以最小的代价获得全部的颜色，只需要最多n-1次操作二即可。<br>于是有 0 &lt;= j &lt;= n - 1 。<br>我们发现进行操作二的次数最终会在总代价上加上 j * x，<br>不妨设dp[ i ] [ j ]表示进行j次操作时获得第i个颜色的最小代价。<br>于是可以通过枚举j来获得操作次数为j时获得每种颜色付出的最小代价，最终加和即可。<br>状态转移方程 dp[ i ] [ j ] = min ( a[ i - j ] , dp [ i ] [ j - 1 ])<br>a[i - j ] 表示在获得第i个颜色时进行了第j次操作（已经做了j - 1 次）并以后移了j次的代价获得，<br>dp[ i ] [ j - 1 ] 表示在获得第i个颜色时（已经进行了j-1次操作），以当前代价直接获得。<br>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span>`</span></span><br><span class="line">`<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>`</span></span><br><span class="line">`<span class="keyword">using</span> <span class="keyword">namespace</span> std;`</span><br><span class="line">`<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll ;`</span><br><span class="line"></span><br><span class="line">`<span class="keyword">int</span> dp[<span class="number">2020</span>][<span class="number">2020</span>];`</span><br><span class="line">`ll mi = <span class="number">0x3f3f3f3f3f3f3f3f</span> ;`</span><br><span class="line">`int main()`</span><br><span class="line">`&#123;`</span><br><span class="line">`ll n , x ,sum;`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;x) ;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;dp[i][<span class="number">0</span>]) ;<span class="comment">//这里进行了空间优化，直接用dp[i][0] 表示a[i]即可 。` </span></span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n - <span class="number">1</span> ; j ++)&#123;`</span><br><span class="line">        `<span class="keyword">int</span> k = i - j ;`</span><br><span class="line">        `<span class="keyword">if</span>(k &lt;=<span class="number">0</span>) k += n  ;<span class="comment">//指向后移j次的代价可能会循环`</span></span><br><span class="line">        `dp[i][j] = <span class="built_in">min</span>(dp[i][j<span class="number">-1</span>],dp[k][<span class="number">0</span>]) ;`</span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= n - <span class="number">1</span>; i ++)&#123;`</span><br><span class="line">        `sum = <span class="number">0</span> ;`</span><br><span class="line">        `<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n ; j ++)`</span><br><span class="line">            `sum += dp[j][i] ;`</span><br><span class="line">            `sum += i * x ;<span class="comment">//最后求得各个状态付出代价总和`</span></span><br><span class="line">            `mi = <span class="built_in">min</span>(mi,sum) ;<span class="comment">//取得其中的最小值`</span></span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,mi) ;`</span><br><span class="line">`<span class="keyword">return</span> <span class="number">0</span> ；` </span><br><span class="line">`&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>刷题总结</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>one of each</title>
     <url>/2021/04/09/23-26-21/</url>
     <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>You are given a sequence of n integers x = [x1,x2,…,xn] and an integer k . It is guaranteed that 1 ≤ xi ≤ k , and every integer from 1 to k appears in the list x at least once.<br>Find the lexicographically smallest subsequence of x that contains each integer from 1 to k exactly once. </p>
@@ -385,24 +434,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/03/29/20-24-16/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>传球游戏</title>
     <url>/2021/04/21/22-26-50/</url>
     <content><![CDATA[<h4 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h4><p>上体育课时，墨老师经常带着同学们一起做游戏。这次，墨老师带着同学们一起做传球游戏，游戏规则是这样的：N个同学站成一个圆圈，其中的一个同学手里拿着一个球，当老师吹哨子时开始传球，每个同学可以把球传给自己左右的两个同学中的一个（左右任意），当老师再次吹哨子时，传球停止，此时拿着球没传出去的那个同学就是败者，要给大家表演一个节目。</p>
@@ -423,28 +454,6 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>colorful slimes(DP)</title>
-    <url>/2021/04/04/22-56-07/</url>
-    <content><![CDATA[<p>题目描述<br>Snuke lives in another world, where slimes are real creatures and kept by some people. Slimes come in N colors. Those colors are conveniently numbered 1 through N. Snuke currently has no slime. His objective is to have slimes of all the colors together.</p>
-<p>Snuke can perform the following two actions:</p>
-<p>Select a color i (1≤i≤N), such that he does not currently have a slime in color i, and catch a slime in color i. This action takes him ai seconds.</p>
-<p>Cast a spell, which changes the color of all the slimes that he currently has. The color of a slime in color i (1≤i≤N−1) will become color i+1, and the color of a slime in color N will become color 1. This action takes him x seconds.</p>
-<p>Find the minimum time that Snuke needs to have slimes in all N colors.</p>
-<p>Constraints<br>2≤N≤2,000<br>ai are integers.<br>1≤ai≤109<br>x is an integer.<br>1≤x≤109<br>输入<br>The input is given from Standard Input in the following format:</p>
-<p>N x<br>a1 a2 … aN<br>输出<br>Find the minimum time that Snuke needs to have slimes in all N colors.<br>样例输入 Copy<br>2 10<br>1 100<br>样例输出 Copy<br>12<br>提示<br>Snuke can act as follows:</p>
-<p>Catch a slime in color 1. This takes 1 second.<br>Cast the spell. The color of the slime changes: 1 → 2. This takes 10 seconds.<br>Catch a slime in color 1. This takes 1 second.<br>本题大意是Snuke 想要获得N种颜色，他有两种操作，一是直接付出对应颜色的代价来获得，二是所有获得的颜色i变成颜色i + 1。<br>所以想要获得颜色i 有两种方法<br>1.直接付出相应代价。<br>2.进行操作二j次使 i-j（已经获得）变成 i 。<br>不妨设进行操作二的次数为j，显然想要以最小的代价获得全部的颜色，只需要最多n-1次操作二即可。<br>于是有 0 &lt;= j &lt;= n - 1 。<br>我们发现进行操作二的次数最终会在总代价上加上 j * x，<br>不妨设dp[ i ] [ j ]表示进行j次操作时获得第i个颜色的最小代价。<br>于是可以通过枚举j来获得操作次数为j时获得每种颜色付出的最小代价，最终加和即可。<br>状态转移方程 dp[ i ] [ j ] = min ( a[ i - j ] , dp [ i ] [ j - 1 ])<br>a[i - j ] 表示在获得第i个颜色时进行了第j次操作（已经做了j - 1 次）并以后移了j次的代价获得，<br>dp[ i ] [ j - 1 ] 表示在获得第i个颜色时（已经进行了j-1次操作），以当前代价直接获得。<br>下面贴代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span>`</span></span><br><span class="line">`<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>`</span></span><br><span class="line">`<span class="keyword">using</span> <span class="keyword">namespace</span> std;`</span><br><span class="line">`<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll ;`</span><br><span class="line"></span><br><span class="line">`<span class="keyword">int</span> dp[<span class="number">2020</span>][<span class="number">2020</span>];`</span><br><span class="line">`ll mi = <span class="number">0x3f3f3f3f3f3f3f3f</span> ;`</span><br><span class="line">`int main()`</span><br><span class="line">`&#123;`</span><br><span class="line">`ll n , x ,sum;`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;x) ;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;dp[i][<span class="number">0</span>]) ;<span class="comment">//这里进行了空间优化，直接用dp[i][0] 表示a[i]即可 。` </span></span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++)`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n - <span class="number">1</span> ; j ++)&#123;`</span><br><span class="line">        `<span class="keyword">int</span> k = i - j ;`</span><br><span class="line">        `<span class="keyword">if</span>(k &lt;=<span class="number">0</span>) k += n  ;<span class="comment">//指向后移j次的代价可能会循环`</span></span><br><span class="line">        `dp[i][j] = <span class="built_in">min</span>(dp[i][j<span class="number">-1</span>],dp[k][<span class="number">0</span>]) ;`</span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= n - <span class="number">1</span>; i ++)&#123;`</span><br><span class="line">        `sum = <span class="number">0</span> ;`</span><br><span class="line">        `<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= n ; j ++)`</span><br><span class="line">            `sum += dp[j][i] ;`</span><br><span class="line">            `sum += i * x ;<span class="comment">//最后求得各个状态付出代价总和`</span></span><br><span class="line">            `mi = <span class="built_in">min</span>(mi,sum) ;<span class="comment">//取得其中的最小值`</span></span><br><span class="line">    `&#125;`</span><br><span class="line">`<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,mi) ;`</span><br><span class="line">`<span class="keyword">return</span> <span class="number">0</span> ；` </span><br><span class="line">`&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>刷题总结</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -475,6 +484,31 @@
       </categories>
       <tags>
         <tag>取模</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>求1到n内所有数因子的和</title>
+    <url>/2021/04/05/20-35-53/</url>
+    <content><![CDATA[<p>求 1 ~ n范围内 各个数因子的和，数论中给出了如下结论 ：</p>
+<p>n * ( 1 / 1 + 1/2 + 1/3 + …… + 1/ n) ; </p>
+<p>原来在1到n中，1可以作为 n/ 1个数的因子 ； </p>
+<p>2 可以作为 n / 2 个数的因子 ； </p>
+<p>3可以作为 n / 3 个数的因子；</p>
+<p>由此得出上面式子</p>
+<p>将每个部分视为n / x</p>
+<p>可知可以降低范围到√n</p>
+<p>下面贴代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(l=<span class="number">1</span>; l&lt;=t; l++)</span><br><span class="line">            ans += n/l;</span><br><span class="line">    ans = ans*<span class="number">2</span>-t*t;<span class="comment">//其中t * t &lt;= n</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+<p>这里贴出另一种代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">LL l, r;</span><br><span class="line">   LL ans = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>( l = <span class="number">1</span>; l &lt;= n; l = r+<span class="number">1</span>)</span><br><span class="line">   &#123;</span><br><span class="line">       r = n/(n/l);</span><br><span class="line">       ans += n/l *(r - l + <span class="number">1</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -513,31 +547,6 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>求1到n内所有数因子的和</title>
-    <url>/2021/04/05/20-35-53/</url>
-    <content><![CDATA[<p>求 1 ~ n范围内 各个数因子的和，数论中给出了如下结论 ：</p>
-<p>n * ( 1 / 1 + 1/2 + 1/3 + …… + 1/ n) ; </p>
-<p>原来在1到n中，1可以作为 n/ 1个数的因子 ； </p>
-<p>2 可以作为 n / 2 个数的因子 ； </p>
-<p>3可以作为 n / 3 个数的因子；</p>
-<p>由此得出上面式子</p>
-<p>将每个部分视为n / x</p>
-<p>可知可以降低范围到√n</p>
-<p>下面贴代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(l=<span class="number">1</span>; l&lt;=t; l++)</span><br><span class="line">            ans += n/l;</span><br><span class="line">    ans = ans*<span class="number">2</span>-t*t;<span class="comment">//其中t * t &lt;= n</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
-
-<p>这里贴出另一种代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">LL l, r;</span><br><span class="line">   LL ans = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>( l = <span class="number">1</span>; l &lt;= n; l = r+<span class="number">1</span>)</span><br><span class="line">   &#123;</span><br><span class="line">       r = n/(n/l);</span><br><span class="line">       ans += n/l *(r - l + <span class="number">1</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>模板</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
